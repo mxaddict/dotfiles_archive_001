@@ -85,8 +85,28 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# Alias for ubuntu software updates
-alias upbuntu='sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y && sudo apt-get autoclean -y && sudo apt-get autoremove -y'
+# Some system package management aliases
+alias mxupdate      = 'mxpacman update'
+alias mxinstall     = 'mxpacman install'
+alias mxupgrade     = 'mxpacman upgrade'
+alias mxdistupgrade = 'mxpacman dist-upgrade'
+alias mxautoclean   = 'mxpacman autoclean'
+alias mxautoremove  = 'mxpacman autoremove'
+
+# Check if we have .deb or .rpm based system
+if [ $(which apt-get) != "" ]
+then
+	# Alias for system package manager
+	alias mxpacman = 'apt-get'
+
+	alias mxmaintenance = 'mxupdate && mxupgrade -y && mxdistupgrade -y && mxautoclean -y && mxautoremove -y'
+else
+	# Alias for system package manager
+	alias mxpacman = 'yum'
+
+	# Alias for our mxmaintenance helper
+	alias mxmaintenance = 'mxupgrade -y'
+fi
 
 # enable programmable completion features
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
