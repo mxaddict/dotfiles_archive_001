@@ -85,27 +85,32 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# Some system package management aliases
-alias mxupdate      = 'mxpacman update'
-alias mxinstall     = 'mxpacman install'
-alias mxupgrade     = 'mxpacman upgrade'
-alias mxdistupgrade = 'mxpacman dist-upgrade'
-alias mxautoclean   = 'mxpacman autoclean'
-alias mxautoremove  = 'mxpacman autoremove'
-
 # Check if we have .deb or .rpm based system
 if [ $(which apt-get) != "" ]
 then
 	# Alias for system package manager
-	alias mxpacman = 'apt-get'
-
-	alias mxmaintenance = 'mxupdate && mxupgrade -y && mxdistupgrade -y && mxautoclean -y && mxautoremove -y'
+	alias mxpacman='sudo apt-get'
 else
 	# Alias for system package manager
-	alias mxpacman = 'yum'
+	alias mxpacman='sudo yum'
+fi
 
+# Some system package management aliases
+alias mxupdate='mxpacman update'
+alias mxinstall='mxpacman install'
+alias mxupgrade='mxpacman upgrade'
+alias mxdistupgrade='mxpacman dist-upgrade'
+alias mxautoclean='mxpacman autoclean'
+alias mxautoremove='mxpacman autoremove'
+
+# Check if we have .deb or .rpm based system
+if [ $(which apt-get) != "" ]
+then
 	# Alias for our mxmaintenance helper
-	alias mxmaintenance = 'mxupgrade -y'
+	alias mxmaintenance='mxupdate && mxupgrade -y && mxdistupgrade -y && mxautoclean -y && mxautoremove -y'
+else
+	# Alias for our mxmaintenance helper
+	alias mxmaintenance='mxupgrade -y'
 fi
 
 # enable programmable completion features
