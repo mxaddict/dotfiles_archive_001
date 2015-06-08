@@ -42,6 +42,13 @@ else
 	cd $DOTFILES_TMP && git fetch && git checkout origin/master
 fi
 
+# Check if we have  ~/.vimrc.d
+if [ ! -d ~/.vimrc.d ]
+then
+	# Remove the OLD .vimrc.d/ DIR from home DIR
+	rm -r ~/.vimrc.d
+fi
+
 # Copy the .vimrc.d/ DIR to home DIR
 cp -r $DOTFILES_TMP/.vimrc.d ~/
 
