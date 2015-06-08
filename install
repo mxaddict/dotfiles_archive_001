@@ -43,7 +43,7 @@ else
 fi
 
 # Check if we have  ~/.vimrc.d
-if [ ! -d ~/.vimrc.d ]
+if [ -d ~/.vimrc.d ]
 then
 	# Remove the OLD .vimrc.d/ DIR from home DIR
 	rm -r ~/.vimrc.d
