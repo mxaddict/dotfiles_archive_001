@@ -1,0 +1,107 @@
+#!/bin/bash
+# Set GIT to use colors
+git config --global color.ui auto
+
+# Load up some default values from the environment!
+GIT_NAME_CURRENT=$(git config --global user.name)
+GIT_EMAIL_CURRENT=$(git config --global user.email)
+
+# Ask what name to use?
+printf "Git Name [$GIT_NAME_CURRENT]:"
+read GIT_NAME_NEW
+
+# Ask what email to use?
+printf "Git Email [$GIT_EMAIL_CURRENT]:"
+read GIT_EMAIL_NEW
+
+# Ask if we want to update the plugins...
+printf "Update/Install Plugins? [Y/n]:"
+read UPDATE_PLUGINS
+
+# Save the GIT_NAME
+if [ "$GIT_NAME_NEW" != "" ]
+then
+	git config --global user.name "$GIT_NAME_NEW"
+fi
+
+# Save the GIT_EMAIL
+if [ "$GIT_EMAIL_NEW" != "" ]
+then
+	git config --global user.email "$GIT_EMAIL_NEW"
+fi
+
+# Where is the temp DIR for dotfiles?
+DOTFILES_TMP="${HOME}/.dotfiles"
+
+# Check if we already have a copy
+if [ ! -d $DOTFILES_TMP ]
+then
+	# Now clone the repo...
+	git clone https://github.com/mxaddict/dotfiles.git $DOTFILES_TMP
+else
+	cd $DOTFILES_TMP && git fetch && git checkout origin/master
+fi
+
+# Copy the .vimrc.d/ DIR to home DIR
+cp -r $DOTFILES_TMP/.vimrc.d ~/
+
+# Check if we have a bundle DIR
+if [ ! -d ~/.vim/bundle ]
+then
+	# the ~/.vim/bundle DIR does not exist, so we will it to exist
+	mkdir -p ~/.vim/bundle
+fi
+
+# Check if our plugin manager is installed
+if [ ! -f ~/.vim/autoload/plug.vim ]
+then
+	# Install our plugin manager
+	printf "Installing our plugin manager\n"
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+fi
+
+# Setup the vimrc for temporary use!
+echo "source ~/.vimrc.d/plug.vim" > ~/.vimrc
+
+# Make some symlinks...
+if [ ! -h ~/.nvim ]
+then
+	ln -s ~/.vim ~/.nvim
+fi
+
+# Make some symlinks...
+if [ ! -h ~/.nvimrc ]
+then
+	ln -s ~/.vimrc ~/.nvimrc
+fi
+
+# Check if we even want to install/update plugins
+if [ "$UPDATE_PLUGINS" != "n" ]
+then
+	# Install Vim Plugins
+	printf "Installing Vim Plugins, Will take a while depending on connection speed!\n"
+	vim +PlugUpgrade +PlugClean +PlugUpdate +qall
+fi
+
+# Copy all our custom files!
+cat $DOTFILES_TMP/.bash_profile > ~/.bash_profile
+cat $DOTFILES_TMP/.bashrc       > ~/.bashrc
+cat $DOTFILES_TMP/.vimrc        > ~/.vimrc
+cat $DOTFILES_TMP/.tmux.conf    > ~/.tmux.conf
+
+# Check if we have promptline setup already
+if [ -d ~/.vim/plugged/promptline.vim ]
+then
+	# Setup Promptline!
+	vim +"PromptlineSnapshot! ~/.promptline.sh" +qall
+fi
+
+# Check if we have promptline setup already
+if [ -d ~/.vim/plugged/tmuxline.vim ]
+then
+	# Setup Promptline!
+	vim +Tmuxline +"TmuxlineSnapshot! ~/.tmuxline.conf" +qall
+fi
+
+# Install done! WEW!
+printf "Install DONE! WEW!\n"
