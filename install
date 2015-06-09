@@ -80,7 +80,7 @@ if [ "$UPDATE_PLUGINS" != "n" ]
 then
 	# Install Vim Plugins
 	printf "Installing Vim Plugins, Will take a while depending on connection speed!\n"
-	vim +PlugUpgrade +PlugClean! +PlugInstall +PlugUpdate +qall
+	vim +PlugUpgrade +PlugClean! +PlugUpdate +qall
 fi
 
 # Copy all our custom files!
