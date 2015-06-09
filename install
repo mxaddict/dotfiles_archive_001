@@ -52,13 +52,6 @@ fi
 # Copy the .vimrc.d/ DIR to home DIR
 cp -r $DOTFILES_TMP/.vimrc.d ~/
 
-# Check if we have a bundle DIR
-if [ ! -d ~/.vim/bundle ]
-then
-	# the ~/.vim/bundle DIR does not exist, so we will it to exist
-	mkdir -p ~/.vim/bundle
-fi
-
 # Check if our plugin manager is installed
 if [ ! -f ~/.vim/autoload/plug.vim ]
 then
@@ -87,7 +80,7 @@ if [ "$UPDATE_PLUGINS" != "n" ]
 then
 	# Install Vim Plugins
 	printf "Installing Vim Plugins, Will take a while depending on connection speed!\n"
-	vim +PlugUpgrade +PlugClean! +PlugUpdate +qall
+	vim +PlugUpgrade +PlugClean! +PlugInstall +PlugUpdate +qall
 fi
 
 # Copy all our custom files!
