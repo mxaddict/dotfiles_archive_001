@@ -1,0 +1,2 @@
+# we need to load our .zshrc cause Mac will not load it!
+[[ -s ~/.zshrc ]] && source ~/.zshrc

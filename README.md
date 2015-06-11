@@ -11,13 +11,14 @@ Notes
 - will overwrite any custom VIM configs that you have!
 - will overwrite any custom BASHRC configs that you have!
 - will overwrite any custom TMUX configs that you have!
-- requires: git, cmake, build-essential, python-dev, tmux, libclang-dev libboost-all-dev
+- requires: curl, git, cmake, build-essential, python-dev, tmux, libclang-dev libboost-all-dev
+- optional: zsh
 
 Installation
 ---
 ```shell
 # Install requirements
-sudo apt-get install git cmake build-essential python-dev tmux libclang-dev libboost-all-dev -y
+sudo apt-get install curl git cmake build-essential python-dev tmux libclang-dev libboost-all-dev -y
 
 # seriously, that's it! and follow the prompts!
 sh <(curl -sL https://raw.githubusercontent.com/mxaddict/dotfiles/master/install)

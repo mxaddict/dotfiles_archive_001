@@ -1,0 +1,109 @@
+# Set default editor to vim
+export EDITOR="vim"
+
+# tell bash that we want to use the 256 color terminal
+export TERM=screen-256color;
+
+# Check if ${HOME}/.bin/ exists
+if [ -d "${HOME}/.bin/" ]
+then
+	# add my ${HOME}/bin to the path
+	export PATH=$PATH":${HOME}/.bin/"
+fi
+
+# Check if ${HOME}/.sdks/android/tools/ exists
+if [ -d "${HOME}/.sdks/android/tools/" ]
+then
+	# add my android tools to the path
+	export PATH=$PATH":${HOME}/.sdks/android/tools/"
+fi
+
+# Check if ${HOME}/.sdks/android/platform-tools/ exists
+if [ -d "${HOME}/.sdks/android/platform-tools/" ]
+then
+	# add my android platform tools to the path
+	export PATH=$PATH":${HOME}/.sdks/android/platform-tools/"
+fi
+
+# Check if ${HOME}/.composer/vendor/bin/ exists
+if [ -d "${HOME}/.composer/vendor/bin/" ]
+then
+	# Add GLOBAL composer to PATH so we can use it in BASH!
+	export PATH=$PATH":${HOME}/.composer/vendor/bin/"
+fi
+
+# Check if ${HOME}/.sdks/android/ exists
+if [ -d "${HOME}/.sdks/android/" ]
+then
+	# add my android sdk as ANDROID_HOME so that android studio will work nicely
+	export ANDROID_HOME="${HOME}/.sdks/android/"
+fi
+
+# Check if we have java 7...
+if [ -d "/usr/lib/jvm/java-7-openjdk-amd64/" ]
+then
+	# JAVA! WHERE DO YOU LIVE?
+	export JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64/"
+fi
+
+# Check if we have java 8...
+if [ -d "/usr/lib/jvm/java-8-openjdk-amd64/" ]
+then
+	# JAVA! WHERE DO YOU LIVE?
+	export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/"
+fi
+
+# Aliases to enable color support for these
+alias ls='ls --color=auto'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Check if we have .deb or .rpm based system
+if [ $(which apt-get) != "" ]
+then
+	# Alias for system package manager
+	alias mxpacman='sudo apt-get'
+else
+	# Alias for system package manager
+	alias mxpacman='sudo yum'
+fi
+
+# Some system package management aliases
+alias mxupdate='mxpacman update'
+alias mxinstall='mxpacman install'
+alias mxupgrade='mxpacman upgrade'
+alias mxdistupgrade='mxpacman dist-upgrade'
+alias mxautoclean='mxpacman autoclean'
+alias mxautoremove='mxpacman autoremove'
+
+# Check if we have .deb or .rpm based system
+if [ $(which apt-get) != "" ]
+then
+	# Alias for our mxmaintenance helper
+	alias mxmaintenance='mxupdate && mxupgrade -y && mxdistupgrade -y && mxautoclean -y && mxautoremove -y'
+else
+	# Alias for our mxmaintenance helper
+	alias mxmaintenance='mxupgrade -y'
+fi
+
+# load up the custom CLI PROMPT
+if [ -f ~/.promptline.sh ]
+then
+	source ~/.promptline.sh
+fi
+
+# load the rails bash configs
+if [ -f /etc/profile.d/rvm.sh ]
+then
+	source /etc/profile.d/rvm.sh
+fi
+
