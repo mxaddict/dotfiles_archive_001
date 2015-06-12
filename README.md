@@ -18,7 +18,11 @@ Installation
 ---
 ```shell
 # Install requirements
+## Ubuntu/Debian
 sudo apt-get install curl git cmake build-essential python-dev tmux libclang-dev libboost-all-dev -y
+
+## Babun
+pact install curl git cmake gcc gcc-g++ python tmux libclang-devel libboost-devel
 
 # seriously, that's it! and follow the prompts!
 sh <(curl -sL https://raw.githubusercontent.com/mxaddict/dotfiles/master/install)
