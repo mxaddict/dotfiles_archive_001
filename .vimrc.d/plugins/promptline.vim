@@ -7,7 +7,7 @@ let g:promptline_preset = {
 	\'b':    [ promptline#slices#cwd() ],
 	\'y':    [ promptline#slices#git_status() ],
 	\'z':    [ promptline#slices#vcs_branch() ],
-	\'warn': [ promptline#slices#last_exit_code(), promptline#slices#battery(), promptline#slices#jobs() ]
+	\'warn': [ promptline#slices#last_exit_code(), promptline#slices#jobs() ]
 \}
 
 " Disable the custom font.
