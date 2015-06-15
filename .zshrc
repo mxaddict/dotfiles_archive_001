@@ -11,6 +11,10 @@ HISTSIZE=5000
 SAVEHIST=5000
 HISTFILE=~/.zsh_history
 
+# We need some magic command history!
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
+
 # Use modern completion system
 autoload -Uz compinit
 compinit
