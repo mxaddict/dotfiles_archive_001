@@ -17,12 +17,16 @@ Notes
 Installation
 ---
 ```shell
-# Install requirements
-## Ubuntu/Debian
+# Install requirements START
+## FOR Ubuntu/Debian
 sudo apt-get install vim-gtk curl git cmake build-essential python-dev tmux libclang-dev libboost-all-dev -y
 
-## Babun
+## OR
+
+## FOR Babun
 pact install vim curl git cmake gcc-core gcc-g++ python tmux libclang-devel libboost-devel
+
+# Install requirements END
 
 # seriously, that's it! and follow the prompts!
 sh <(curl -sL https://raw.githubusercontent.com/mxaddict/dotfiles/master/install)
