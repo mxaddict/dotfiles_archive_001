@@ -69,21 +69,21 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # Check if we have an .deb based system
-if [ $(command -v apt-get) != "" ]
+if [ $(command -v apt-get) ]
 then
 	# Alias for system package manager
 	alias mxpacman='sudo apt-get'
 fi
 
 # Check if we have an .rpm based system
-if [ $(command -v apt-get) != "" ]
+if [ $(command -v yum) ]
 then
 	# Alias for system package manager
 	alias mxpacman='sudo yum'
 fi
 
 # Check if we have a pact based system
-if [ $(command -v pact) != "" ]
+if [ $(command -v pact) ]
 then
 	# Alias for system package manager
 	alias mxpacman='pact'
