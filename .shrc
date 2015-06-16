@@ -1,3 +1,4 @@
+#!/bin/sh
 # Set default editor to vim
 export EDITOR="vim"
 
@@ -67,14 +68,25 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# Check if we have .deb or .rpm based system
-if [ $(which apt-get) != "" ]
+# Check if we have an .deb based system
+if [ $(command -v apt-get) != "" ]
 then
 	# Alias for system package manager
 	alias mxpacman='sudo apt-get'
-else
+fi
+
+# Check if we have an .rpm based system
+if [ $(command -v apt-get) != "" ]
+then
 	# Alias for system package manager
 	alias mxpacman='sudo yum'
+fi
+
+# Check if we have a pact based system
+if [ $(command -v pact) != "" ]
+then
+	# Alias for system package manager
+	alias mxpacman='pact'
 fi
 
 # Some system package management aliases
