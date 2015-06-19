@@ -3,7 +3,7 @@ call plug#begin('~/.vim/plugged')
 
 " My Bundles here:
 Plug 'SirVer/ultisnips'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer --system-libclang --system-boost' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
 Plug 'airblade/vim-gitgutter'
 Plug 'edkolev/promptline.vim'
 Plug 'edkolev/tmuxline.vim'

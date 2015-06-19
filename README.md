@@ -19,12 +19,12 @@ Installation
 ```shell
 # Install requirements START
 ## FOR Ubuntu/Debian
-sudo apt-get install vim-gtk curl git cmake build-essential python-dev tmux libclang-dev libboost-all-dev -y
+sudo apt-get install vim-gtk curl git cmake build-essential python-dev tmux -y
 
 ## OR
 
 ## FOR Babun
-pact install vim curl git cmake gcc-core gcc-g++ python tmux libclang-devel libboost-devel
+pact install vim curl git cmake gcc-core gcc-g++ python tmux -y
 
 # Install requirements END
 
