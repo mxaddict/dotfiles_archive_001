@@ -97,14 +97,14 @@ alias mxdistupgrade='mxpacman dist-upgrade'
 alias mxautoclean='mxpacman autoclean'
 alias mxautoremove='mxpacman autoremove'
 
-# Check if we have .deb or .rpm based system
-if [ $(which apt-get) != "" ]
+# Alias for our mxmaintenance helper
+alias mxmaintenance='mxupgrade -y'
+
+# Check if we have an .deb based system
+if [ $(command -v apt-get) ]
 then
 	# Alias for our mxmaintenance helper
 	alias mxmaintenance='mxupdate && mxupgrade -y && mxdistupgrade -y && mxautoclean -y && mxautoremove -y'
-else
-	# Alias for our mxmaintenance helper
-	alias mxmaintenance='mxupgrade -y'
 fi
 
 # load up the custom CLI PROMPT

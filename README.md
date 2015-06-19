@@ -32,6 +32,10 @@ pact install vim curl git cmake gcc-core gcc-g++ python tmux libclang-devel libb
 sh <(curl -sL https://raw.githubusercontent.com/mxaddict/dotfiles/master/install)
 ```
 
+Platform support
+---
+I have only tested this on ubuntu and debian based systems.
+
 Legacy Dotfiles
 ---
 Looking for my old dotfiles? I moved them [here](https://github.com/mxaddict/dotfiles_legacy.git)
