@@ -105,7 +105,7 @@ then
 	vim +"PromptlineSnapshot! ~/.promptline.sh" +qall
 fi
 
-# Check if we have promptline setup already
+# Check if we have tmuxline setup already
 if [ -d ~/.vim/plugged/tmuxline.vim ]
 then
 	# Setup Promptline!
