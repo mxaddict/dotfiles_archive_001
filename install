@@ -33,6 +33,12 @@ fi
 # Where is the temp DIR for dotfiles?
 DOTFILES_TMP="${HOME}/.dotfiles"
 
+# Where do we have the XDG_CONFIG_HOME?
+XDG_CONFIG_HOME="${HOME}/.config"
+
+# Create the XDG_CONFIG_HOME DIRECTORY
+mkdir -p ${XDG_CONFIG_HOME}
+
 # Check if we already have a copy
 if [ ! -d $DOTFILES_TMP ]
 then
@@ -64,15 +70,15 @@ fi
 echo "source ~/.vimrc.d/vimplug.vim" > ~/.vimrc
 
 # Make some symlinks...
-if [ ! -h ~/.nvim ]
+if [ ! -h $XDG_CONFIG_HOME/nvim ]
 then
-	ln -s ~/.vim ~/.nvim
+	ln -s ~/.vim $XDG_CONFIG_HOME/nvim
 fi
 
 # Make some symlinks...
-if [ ! -h ~/.nvimrc ]
+if [ ! -h $XDG_CONFIG_HOME/nvim/init.vim ]
 then
-	ln -s ~/.vimrc ~/.nvimrc
+	ln -s ~/.vimrc $XDG_CONFIG_HOME/nvim/init.vim
 fi
 
 # Check if we even want to install/update plugins
