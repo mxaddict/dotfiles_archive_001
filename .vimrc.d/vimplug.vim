@@ -5,10 +5,10 @@ call plug#begin('~/.vim/plugged')
 Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
 Plug 'airblade/vim-gitgutter'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'edkolev/promptline.vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'elzr/vim-json'
-Plug 'embear/vim-localvimrc'
 Plug 'evidens/vim-twig'
 Plug 'godlygeek/tabular'
 Plug 'gregsexton/gitv'
