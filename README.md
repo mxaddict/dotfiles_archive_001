@@ -24,7 +24,7 @@ sudo apt-get install vim-gtk curl git cmake build-essential python-dev tmux -y
 ## OR
 
 ## FOR Babun
-pact install vim curl git cmake gcc-core gcc-g++ python tmux -y
+pact install vim curl git cmake gcc-core gcc-g++ python tmux
 
 # Install requirements END
 
