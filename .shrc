@@ -68,6 +68,10 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+# I want v to open vi and vi to open vim
+alias v=vim
+alias vi=vim
+
 # Check if we have an .deb based system
 if [ $(command -v apt-get) ]
 then
