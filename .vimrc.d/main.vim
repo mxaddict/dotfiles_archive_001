@@ -181,17 +181,17 @@ autocmd BufWritePre,FileWritePre * :g/\s\+$/s/\s\+$//g
 
 " FUNCTION to Convert PRE php 5.4 array syntax to new 5.4+ syntax...
 function! PHPShortHandArrayConverter() range
+	" Replace empty arrays first
+	execute "normal :%s/[aA]rray\\(\\s\\+\\)\\?(\\(\\s\\+\\)\\?)/[]/ge\<CR>"
+
 	" We need a place to store the count...
 	" Count the number of matches
-	let l:count=[0] | %s/[aA]rray\(.*\)(\zs/\=map(l:count,'v:val+1')[1:]/ge
-
-	" Replace empty arrays first
-	execute "normal :%s/[aA]rray\(.*\)()/[]/ge\<CR>"
+	let l:count=[0] | %s/[aA]rray\(\s\+\)\?(\zs/\=map(l:count,'v:val+1')[1:]/ge
 
 	" Check if we have more than 1
 	while l:count[0] > 0
 		" Find the instances
-		execute "normal gg?[aA]rray\\(.*\\)(\<CR>"
+		execute "normal gg/[aA]rray\\(\\s\\+\\)\\?(\<CR>"
 
 		" Remove the array word
 		execute "normal dwa\<CR>"
@@ -201,7 +201,7 @@ function! PHPShortHandArrayConverter() range
 
 		" We need a place to store the count...
 		" Count the number of matches
-		let l:count=[0] | %s/[aA]rray\(.*\)(\zs/\=map(l:count,'v:val+1')[1:]/ge
+		let l:count=[0] | %s/[aA]rray\(\s\+\)\?(\zs/\=map(l:count,'v:val+1')[1:]/ge
 	endwhile
 endfunction
 
