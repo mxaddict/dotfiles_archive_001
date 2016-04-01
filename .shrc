@@ -26,6 +26,13 @@ then
 	export PATH=$PATH":${HOME}/.sdks/android/platform-tools/"
 fi
 
+# Check if ${HOME}/.composer/vendor/bin/ exists
+if [ -d "${HOME}/.composer/vendor/bin/" ]
+then
+	# Add GLOBAL composer to PATH so we can use it in BASH!
+	export PATH=$PATH":${HOME}/.composer/vendor/bin/"
+fi
+
 # Check if ${HOME}/.config/composer/vendor/bin/ exists
 if [ -d "${HOME}/.config/composer/vendor/bin/" ]
 then
