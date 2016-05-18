@@ -129,6 +129,11 @@ syntax on
 filetype plugin on
 filetype indent on
 
+" Magic code transformation
+no  <F3> ggVGg?
+ino <F3> ggVGg?
+vno <F3> ggVGg?
+
 " Disable arrow keys and use UP and DOWN for code movement
 no  <down>  mz:m+<CR>`z
 no  <left>  <Nop>
