@@ -79,25 +79,18 @@ alias l='ls -CF'
 alias v=vim
 alias vi=vim
 
-# Check if we have an .deb based system
+# Check if we have an debian based system
 if [ $(command -v apt-get) ]
 then
 	# Alias for system package manager
 	alias mxpacman='sudo apt-get'
 fi
 
-# Check if we have an .rpm based system
-if [ $(command -v yum) ]
+# Check if we have an ubuntu based system
+if [ $(command -v apt) ]
 then
 	# Alias for system package manager
-	alias mxpacman='sudo yum'
-fi
-
-# Check if we have a pact based system
-if [ $(command -v pact) ]
-then
-	# Alias for system package manager
-	alias mxpacman='pact'
+	alias mxpacman='sudo apt'
 fi
 
 # Some system package management aliases
@@ -109,14 +102,7 @@ alias mxautoclean='mxpacman autoclean'
 alias mxautoremove='mxpacman autoremove'
 
 # Alias for our mxmaintenance helper
-alias mxmaintenance='mxupgrade -y'
-
-# Check if we have an .deb based system
-if [ $(command -v apt-get) ]
-then
-	# Alias for our mxmaintenance helper
-	alias mxmaintenance='mxupdate && mxupgrade -y && mxdistupgrade -y && mxautoclean -y && mxautoremove -y'
-fi
+alias mxmaintenance='mxupdate && mxupgrade -y && mxdistupgrade -y && mxautoclean -y && mxautoremove -y'
 
 # load up the custom CLI PROMPT
 if [ -f ~/.promptline.sh ]
