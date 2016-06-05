@@ -2,7 +2,7 @@
 # Set default editor to vim
 export EDITOR="vim"
 
-# tell bash that we want to use the 256 color terminal
+# tell shell that we want to use the 256 color terminal
 export TERM=screen-256color;
 
 # Check if ${HOME}/.bin/ exists
@@ -110,9 +110,15 @@ then
 	source ~/.promptline.sh
 fi
 
-# load the rails bash configs
+# load the rails shell configs
 if [ -f /etc/profile.d/rvm.sh ]
 then
 	source /etc/profile.d/rvm.sh
+fi
+
+# load the nvm shell configs
+if [ -f ~/.nvm/nvm.sh ]
+then
+	source ~/.nvm/nvm.sh
 fi
 
