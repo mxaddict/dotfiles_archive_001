@@ -61,6 +61,11 @@ then
 	export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/"
 fi
 
+# Some quick Aliases for IRC related things
+alias irc='irssi'
+alias undernet='irssi -c undernet'
+alias freenode='irssi -c freenode'
+
 # Aliases to enable color support for these
 alias ls='ls --color=auto'
 alias dir='dir --color=auto'
