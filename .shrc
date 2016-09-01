@@ -61,6 +61,13 @@ then
 	export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/"
 fi
 
+# Check if we have java 9...
+if [ -d "/usr/lib/jvm/java-9-openjdk-amd64/" ]
+then
+	# JAVA! WHERE DO YOU LIVE?
+	export JAVA_HOME="/usr/lib/jvm/java-9-openjdk-amd64/"
+fi
+
 # Some quick Aliases for IRC related things
 alias irc='irssi'
 alias irctor='torsocks irssi'
