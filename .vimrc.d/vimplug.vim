@@ -19,7 +19,6 @@ Plug 'kien/ctrlp.vim'
 Plug 'mattn/emmet-vim'
 Plug 'miyakogi/seiya.vim'
 Plug 'mxaddict/pdv'
-Plug 'nanotech/jellybeans.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'pangloss/vim-javascript'
 Plug 'plasticboy/vim-markdown'
@@ -35,6 +34,10 @@ Plug 'tpope/vim-haml'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/matchit.zip'
 Plug 'xsbeats/vim-blade'
+
+" Themes
+Plug 'nanotech/jellybeans.vim'
+Plug 'tomasr/molokai'
 
 " Let vim plug know we are done
 call plug#end()
