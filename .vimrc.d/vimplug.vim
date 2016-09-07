@@ -36,6 +36,7 @@ Plug 'vim-scripts/matchit.zip'
 Plug 'xsbeats/vim-blade'
 
 " Themes
+Plug 'benjaminwhite/Benokai'
 Plug 'nanotech/jellybeans.vim'
 Plug 'tomasr/molokai'
 
