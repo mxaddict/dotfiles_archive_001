@@ -72,7 +72,7 @@ set ignorecase
 " When searching try to be smart about cases
 set smartcase
 
-" Enable mouse so we can move splits and stuff
+" Disable mouse cause only noobs use it.
 set mouse=
 
 " Enable system clipboard IF TMUX is not used
