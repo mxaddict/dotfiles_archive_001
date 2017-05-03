@@ -180,9 +180,6 @@ vno <leader>fn s<C-R>=expand("%:t:r")<CR><ESC>
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
 
-" lets clean the file before we save it!
-autocmd BufWritePre,FileWritePre * :g/\s\+$/s/\s\+$//g
-
 " FUNCTION to Convert PRE php 5.4 array syntax to new 5.4+ syntax...
 function! PHPShortHandArrayConverter() range
 	" Replace empty arrays first
