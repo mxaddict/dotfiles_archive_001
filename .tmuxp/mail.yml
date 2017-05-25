@@ -1,10 +1,15 @@
 session_name: mail
 windows:
-- window_name: sitemaster16@gmail.com
+- window_name: gm
   panes:
     - MUTT_ACCOUNT=sitemaster16@gmail.com mutt
-- window_name: mxaddict@coedmaster.com
+- window_name: cm
   shell_command_before:
     - sleep 1
   panes:
-    - MUTT_ACCOUNT=mxaddict@coedmaster.com mutt
+    - MUTT_ACCOUNT=mxaddict@codedmaster.com mutt
+- window_name: btp
+  shell_command_before:
+    - sleep 1
+  panes:
+    - MUTT_ACCOUNT=barry.deeney@bridgetechnologypartners.com mutt
