@@ -68,6 +68,16 @@ fi
 # Copy the .mutt/ DIR to home DIR
 cp -r $DOTFILES_TMP/.mutt ~/
 
+# Check if we have  ~/.tmuxp
+if [ -d ~/.tmuxp ]
+then
+	# Remove the OLD .tmuxp/ DIR from home DIR
+	rm -r ~/.tmuxp
+fi
+
+# Copy the .tmuxp/ DIR to home DIR
+cp -r $DOTFILES_TMP/.tmuxp ~/
+
 # Check if our plugin manager is installed
 if [ ! -f ~/.vim/autoload/plug.vim ]
 then
