@@ -58,6 +58,16 @@ fi
 # Copy the .vimrc.d/ DIR to home DIR
 cp -r $DOTFILES_TMP/.vimrc.d ~/
 
+# Check if we have  ~/.mutt
+if [ -d ~/.mutt ]
+then
+	# Remove the OLD .mutt/ DIR from home DIR
+	rm -r ~/.mutt
+fi
+
+# Copy the .mutt/ DIR to home DIR
+cp -r $DOTFILES_TMP/.mutt ~/
+
 # Check if our plugin manager is installed
 if [ ! -f ~/.vim/autoload/plug.vim ]
 then
@@ -92,11 +102,12 @@ fi
 # Copy all our custom files!
 cat $DOTFILES_TMP/.bash_profile > ~/.bash_profile
 cat $DOTFILES_TMP/.bashrc       > ~/.bashrc
+cat $DOTFILES_TMP/.mutt         > ~/.mutt
+cat $DOTFILES_TMP/.shrc         > ~/.shrc
+cat $DOTFILES_TMP/.tmux.conf    > ~/.tmux.conf
+cat $DOTFILES_TMP/.vimrc        > ~/.vimrc
 cat $DOTFILES_TMP/.zsh_profile  > ~/.zsh_profile
 cat $DOTFILES_TMP/.zshrc        > ~/.zshrc
-cat $DOTFILES_TMP/.shrc         > ~/.shrc
-cat $DOTFILES_TMP/.vimrc        > ~/.vimrc
-cat $DOTFILES_TMP/.tmux.conf    > ~/.tmux.conf
 
 # Check if we have promptline setup already
 if [ -d ~/.vim/plugged/promptline.vim ]

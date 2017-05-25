@@ -1,0 +1,40 @@
+source ~/.mutt/accounts/$MUTT_ACCOUNT
+source ~/.mutt/common
+source ~/.mutt/keybindings
+source ~/.mutt/colorscheme
+folder-hook . 'push <collapse-all>'
+set mail_check       = 60
+set timeout          = 10
+set imap_keepalive   = 150
+set header_cache     = ~/.mutt/cache/headers
+set message_cachedir = ~/.mutt/cache/bodies
+set certificate_file = ~/.mutt/certificates
+set move             = no
+set sort             = 'threads'
+set sort_aux         = 'reverse-last-date-received'
+set auto_tag         = yes
+set record           = ''
+set ssl_starttls     = yes
+set ssl_force_tls    = yes
+set quit             = ask-yes
+set new_mail_command = 'paplay /usr/share/sounds/freedesktop/stereo/message.oga'
+set include
+set uncollapse_jump
+set imap_check_subscribed
+unset collapse_unread
+unset imap_passive
+ignore 'DKIM-Signature:'
+ignore 'DomainKey-Signature:'
+ignore 'Authentication-Results:'
+hdr_order Date From To Cc
+auto_view text/html application/pdf
+alternative_order text/plain text/enriched text/html
+
+# GooBook
+set query_command    = "goobook query '%s'"
+macro index,pager    a "<pipe-message>goobook add<return>" 'add sender to google contacts'
+
+# Sidebar configuration
+set sidebar_format   = '%B%?F? [%F]?%* %?N?%N/?%S'
+set sidebar_visible
+set mail_check_stats
