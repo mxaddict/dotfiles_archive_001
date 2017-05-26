@@ -93,6 +93,11 @@ alias l='ls -CF'
 alias v=vim
 alias vi=vim
 
+# I need some aliases for tmuxp
+alias tmxp='tmuxp'
+alias tmxpl='tmxp load'
+alias ide='tmxpl .tmuxp.yml'
+
 # Check if we have an debian based system
 if [ $(command -v apt-get) ]
 then
