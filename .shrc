@@ -98,6 +98,12 @@ alias tp='tmuxp'
 alias tpl='tp load'
 alias ide='tpl .tmuxp.yml'
 
+# Add some GIT aliases for fixing typos
+alias fat='echo "Hey there fat fingers!!!\n" && git'
+alias got='fat'
+alias gto='fat'
+alias gti='fat'
+
 # Check if we have an debian based system
 if [ $(command -v apt-get) ]
 then
