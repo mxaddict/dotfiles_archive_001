@@ -4,7 +4,9 @@ shell_command_before:
   - tmux set status off
   - clear
 windows:
-- window_name: cmus
+- window_name: cmustrix
   panes:
-  - shell_command:
-    - cmus
+    - shell_command:
+      - cmus
+      focus: true
+    - cmatrix
