@@ -3,6 +3,7 @@ source ~/.mutt/common
 source ~/.mutt/keybindings
 source ~/.mutt/colorscheme
 folder-hook . 'push <collapse-all>'
+set signature        = ~/.mutt/signature
 set mail_check       = 60
 set timeout          = 10
 set imap_keepalive   = 150
