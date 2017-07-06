@@ -104,6 +104,9 @@ alias got='fat'
 alias gto='fat'
 alias gti='fat'
 
+# Add alias for typo of mkdir
+alias mkdit='mkdir'
+
 # Check if we have an debian based system
 if [ $(command -v apt-get) ]
 then
