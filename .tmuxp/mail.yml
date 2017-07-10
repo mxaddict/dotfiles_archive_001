@@ -8,8 +8,3 @@ windows:
     - sleep 1
   panes:
     - MUTT_ACCOUNT=mxaddict@codedmaster.com mutt
-- window_name: btp
-  shell_command_before:
-    - sleep 1
-  panes:
-    - MUTT_ACCOUNT=barry.deeney@bridgetechnologypartners.com mutt
