@@ -146,9 +146,9 @@ then
 fi
 
 # load the rails shell configs
-if [ -f /usr/local/rvm/scripts/rvm ]
+if [ -f /etc/profile.d/rvm.sh ]
 then
-	source /usr/local/rvm/scripts/rvm
+	source /etc/profile.d/rvm.sh
 fi
 
 # load the nvm shell configs
