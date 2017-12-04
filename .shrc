@@ -110,9 +110,10 @@ alias mkdit='mkdir'
 # Create alias for switching exodus wallets
 alias exodus_deeney='export ACCOUNT=deeney     && rm ~/.config/Exodus/exodus.wallet && ln -s ~/.config/Exodus/exodus.wallet.$ACCOUNT ~/.config/Exodus/exodus.wallet && /opt/Exodus/Exodus'
 alias exodus_helena='export ACCOUNT=helena     && rm ~/.config/Exodus/exodus.wallet && ln -s ~/.config/Exodus/exodus.wallet.$ACCOUNT ~/.config/Exodus/exodus.wallet && /opt/Exodus/Exodus'
+alias exodus_house='export ACCOUNT=house       && rm ~/.config/Exodus/exodus.wallet && ln -s ~/.config/Exodus/exodus.wallet.$ACCOUNT ~/.config/Exodus/exodus.wallet && /opt/Exodus/Exodus'
 alias exodus_kids='export ACCOUNT=kids         && rm ~/.config/Exodus/exodus.wallet && ln -s ~/.config/Exodus/exodus.wallet.$ACCOUNT ~/.config/Exodus/exodus.wallet && /opt/Exodus/Exodus'
+alias exodus_motor='export ACCOUNT=motor       && rm ~/.config/Exodus/exodus.wallet && ln -s ~/.config/Exodus/exodus.wallet.$ACCOUNT ~/.config/Exodus/exodus.wallet && /opt/Exodus/Exodus'
 alias exodus_mxaddict='export ACCOUNT=mxaddict && rm ~/.config/Exodus/exodus.wallet && ln -s ~/.config/Exodus/exodus.wallet.$ACCOUNT ~/.config/Exodus/exodus.wallet && /opt/Exodus/Exodus'
-alias exodus_mxmotor='export ACCOUNT=mxmotor   && rm ~/.config/Exodus/exodus.wallet && ln -s ~/.config/Exodus/exodus.wallet.$ACCOUNT ~/.config/Exodus/exodus.wallet && /opt/Exodus/Exodus'
 alias exodus_savings='export ACCOUNT=savings   && rm ~/.config/Exodus/exodus.wallet && ln -s ~/.config/Exodus/exodus.wallet.$ACCOUNT ~/.config/Exodus/exodus.wallet && /opt/Exodus/Exodus'
 
 # Check if we have an debian based system
