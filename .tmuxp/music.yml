@@ -9,4 +9,3 @@ windows:
     - shell_command:
       - cmus
       focus: true
-    - cmatrix
