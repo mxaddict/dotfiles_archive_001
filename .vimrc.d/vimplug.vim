@@ -13,6 +13,8 @@ Plug 'evidens/vim-twig'
 Plug 'gregsexton/gitv'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'kchmck/vim-coffee-script'
 Plug 'kien/ctrlp.vim'
