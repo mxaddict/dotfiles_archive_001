@@ -136,6 +136,7 @@ alias exodus_helena='export ACCOUNT=helena         && rm ~/.config/Exodus/exodus
 alias exodus_house='export ACCOUNT=house           && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts/$ACCOUNT     ~/.config/Exodus/exodus.wallet && exodus'
 alias exodus_kids='export ACCOUNT=kids             && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts/$ACCOUNT     ~/.config/Exodus/exodus.wallet && exodus'
 alias exodus_maarnie='export ACCOUNT=maarnie       && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts/$ACCOUNT     ~/.config/Exodus/exodus.wallet && exodus'
+alias exodus_mariejoy='export ACCOUNT=mariejoy     && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts/$ACCOUNT     ~/.config/Exodus/exodus.wallet && exodus'
 alias exodus_motor='export ACCOUNT=motor           && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts/$ACCOUNT     ~/.config/Exodus/exodus.wallet && exodus'
 alias exodus_mxaddict='export ACCOUNT=mxaddict     && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts/$ACCOUNT     ~/.config/Exodus/exodus.wallet && exodus'
 alias exodus_savings='export ACCOUNT=savings       && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts/$ACCOUNT     ~/.config/Exodus/exodus.wallet && exodus'
