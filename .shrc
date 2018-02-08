@@ -150,6 +150,9 @@ alias old_exodus_motor='export ACCOUNT=motor       && rm ~/.config/Exodus/exodus
 alias old_exodus_mxaddict='export ACCOUNT=mxaddict && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts.old/$ACCOUNT ~/.config/Exodus/exodus.wallet && exodus'
 alias old_exodus_savings='export ACCOUNT=savings   && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts.old/$ACCOUNT ~/.config/Exodus/exodus.wallet && exodus'
 
+# NAVCOIN Helper commands
+alias nstake='navcoin-cli getstakinginfo && navcoin-cli getblockcount && navcoin-cli getbalance'
+
 # Check if we have an debian based system
 if [ $(command -v apt-get) ]
 then
