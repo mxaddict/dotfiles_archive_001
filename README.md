@@ -36,6 +36,10 @@ Platform support
 ---
 I have only tested this on ubuntu and debian based systems.
 
+Suggestions
+---
+Use [NeoVim](https://neovim.io/)
+
 Legacy Dotfiles
 ---
 Looking for my old dotfiles? I moved them [here](https://github.com/mxaddict/dotfiles_legacy.git)
