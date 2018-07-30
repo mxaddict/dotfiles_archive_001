@@ -2,9 +2,6 @@
 # Set default editor to vim
 export EDITOR="vim"
 
-# tell shell that we want to use the 256 color terminal
-export TERM=screen-256color;
-
 # Check if ${HOME}/.bin/ exists
 if [ -d "${HOME}/.bin/" ]
 then

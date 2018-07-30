@@ -11,12 +11,16 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
+# unset MULTIBYTE so that we have better terminal support for Ctrl/Meta/Alt keys
+unsetopt MULTIBYTE
+
 # Load our keys with zkbd
 autoload -Uz zkbd
 bindkey -v
 if [[ -f ~/.zkbd/$TERM-${DISPLAY:-$VENDOR-$OSTYPE} ]]; then
     source ~/.zkbd/$TERM-${DISPLAY:-$VENDOR-$OSTYPE}
 else
+    echo "COULD NOT LOAD: ~/.zkbd/$TERM-${DISPLAY:-$VENDOR-$OSTYPE}"
     echo "WARNING: Keybindings may not be set correctly!"
     echo "Execute \`zkbd\` to create bindings."
 fi
