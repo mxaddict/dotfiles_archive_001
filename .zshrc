@@ -11,13 +11,31 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
-# Add some bindings (These are for gnome-terminal)
-bindkey "^[[1;5A" history-beginning-search-backward
-bindkey "^[[1;5B" history-beginning-search-forward
-bindkey "^[[1;5C" forward-word
-bindkey "^[[1;5D" backward-word
-bindkey "^[[H"    beginning-of-line
-bindkey "^[[F"    end-of-line
+# Load our keys with zkbd
+autoload -Uz zkbd
+bindkey -v
+if [[ -f ~/.zkbd/$TERM-${DISPLAY:-$VENDOR-$OSTYPE} ]]; then
+    source ~/.zkbd/$TERM-${DISPLAY:-$VENDOR-$OSTYPE}
+else
+    echo "WARNING: Keybindings may not be set correctly!"
+    echo "Execute \`zkbd\` to create bindings."
+fi
+
+# Add our bindings
+[[ -n "${key[Home]}" ]]    && bindkey "${key[Home]}"    beginning-of-line
+[[ -n "${key[End]}" ]]     && bindkey "${key[End]}"     end-of-line
+[[ -n "${key[Insert]}" ]]  && bindkey "${key[Insert]}"  overwrite-mode
+[[ -n "${key[Delete]}" ]]  && bindkey "${key[Delete]}"  delete-char
+[[ -n "${key[Up]}" ]]      && bindkey "${key[Up]}"      up-line-or-search
+[[ -n "${key[Down]}" ]]    && bindkey "${key[Down]}"    down-line-or-search
+[[ -n "${key[Left]}" ]]    && bindkey "${key[Left]}"    backward-char
+[[ -n "${key[Right]}" ]]   && bindkey "${key[Right]}"   forward-char
+[[ -n "${key[C-Up]}" ]]    && bindkey "${key[C-Up]}"    history-beginning-search-backward
+[[ -n "${key[C-Down]}" ]]  && bindkey "${key[C-Down]}"  history-beginning-search-forward
+[[ -n "${key[C-Left]}" ]]  && bindkey "${key[C-Left]}"  backward-word
+[[ -n "${key[C-Right]}" ]] && bindkey "${key[C-Right]}" forward-word
+[[ -n "${key[C-R]}" ]]     && bindkey "${key[C-R]}"     history-incremental-search-backward
+[[ -n "${key[C-T]}" ]]     && bindkey "${key[C-T]}"     history-incremental-search-forward
 
 # Use modern completion system
 autoload -Uz compinit
