@@ -6,16 +6,18 @@ prompt adam1
 # We need to turn on shared history and ignoring dupes...
 setopt histignorealldups sharehistory
 
-# Keep 5000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=5000
-SAVEHIST=5000
+# Keep 10000 lines of history within the shell and save it to ~/.zsh_history:
+HISTSIZE=10000
+SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
-# We need some magic command history!
+# Add some bindings (These are for gnome-terminal)
 bindkey "^[[1;5A" history-beginning-search-backward
 bindkey "^[[1;5B" history-beginning-search-forward
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
+bindkey "^[[H"    beginning-of-line
+bindkey "^[[F"    end-of-line
 
 # Use modern completion system
 autoload -Uz compinit
