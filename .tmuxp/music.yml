@@ -1,8 +1,4 @@
 session_name: music
-shell_command_before:
-  - sleep 0.2
-  - tmux set status off
-  - clear
 windows:
 - window_name: cmustrix
   panes:
