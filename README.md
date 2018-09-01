@@ -42,10 +42,6 @@ Suggestions
 ---
 Use [NeoVim](https://neovim.io/)
 
-Legacy Dotfiles
----
-Looking for my old dotfiles? I moved them [here](https://github.com/mxaddict/dotfiles_legacy.git)
-
 Docs
 ---
 TODO: Make these...
