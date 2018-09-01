@@ -186,6 +186,3 @@ alias mxmaintenance='mxupdate && mxupgrade -y && mxdistupgrade -y && mxautoclean
 
 # load the nvm shell configs
 [ -f ~/.nvm/nvm.sh ] && source ~/.nvm/nvm.sh
-
-# Load fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
