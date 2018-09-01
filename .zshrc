@@ -65,6 +65,3 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # Load our shared SHELLRC file
 source ~/.shrc
-
-# Load fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

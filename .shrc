@@ -176,20 +176,16 @@ alias mxautoremove='mxpacman autoremove'
 alias mxmaintenance='mxupdate && mxupgrade -y && mxdistupgrade -y && mxautoclean -y && mxautoremove -y'
 
 # load up the custom CLI PROMPT
-if [ -f ~/.promptline.sh ]
-then
-	source ~/.promptline.sh
-fi
+[ -f ~/.promptline.sh ] && source ~/.promptline.sh
 
-# load the rails shell configs
-if [ -f /etc/profile.d/rvm.sh ]
-then
-	source /etc/profile.d/rvm.sh
-fi
+# load the rvm shell configs if installed system wide
+[ -f /etc/profile.d/rvm.sh ] && source /etc/profile.d/rvm.sh
+
+# load the rvm shell configs
+[ -f ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm
 
 # load the nvm shell configs
-if [ -f ~/.nvm/nvm.sh ]
-then
-	source ~/.nvm/nvm.sh
-fi
+[ -f ~/.nvm/nvm.sh ] && source ~/.nvm/nvm.sh
 
+# Load fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

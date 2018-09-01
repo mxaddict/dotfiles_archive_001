@@ -15,6 +15,3 @@ shopt -s checkwinsize
 
 # Load our shared SHELLRC file
 source ~/.shrc
-
-# Load fzf
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
