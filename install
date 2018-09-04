@@ -114,6 +114,7 @@ cat $DOTFILES_TMP/.bash_profile > ~/.bash_profile
 cat $DOTFILES_TMP/.bashrc       > ~/.bashrc
 cat $DOTFILES_TMP/.muttrc       > ~/.muttrc
 cat $DOTFILES_TMP/.shrc         > ~/.shrc
+cat $DOTFILES_TMP/.tern-config  > ~/.tern-config
 cat $DOTFILES_TMP/.tmux.conf    > ~/.tmux.conf
 cat $DOTFILES_TMP/.vimrc        > ~/.vimrc
 cat $DOTFILES_TMP/.zsh_profile  > ~/.zsh_profile
