@@ -110,9 +110,11 @@ then
 fi
 
 # Copy all our custom files!
+cat $DOTFILES_TMP/.aliasrc      > ~/.aliasrc
 cat $DOTFILES_TMP/.bash_profile > ~/.bash_profile
 cat $DOTFILES_TMP/.bashrc       > ~/.bashrc
 cat $DOTFILES_TMP/.muttrc       > ~/.muttrc
+cat $DOTFILES_TMP/.pathrc       > ~/.pathrc
 cat $DOTFILES_TMP/.shrc         > ~/.shrc
 cat $DOTFILES_TMP/.tern-config  > ~/.tern-config
 cat $DOTFILES_TMP/.tmux.conf    > ~/.tmux.conf

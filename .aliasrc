@@ -1,0 +1,89 @@
+#!/bin/sh
+# Some quick Aliases for IRC related things
+alias irc='irssi'
+alias irctor='torsocks irssi'
+alias irc_gents='torsocks irssi -c fsociety7xkhgt6i.onion -p 6697'
+alias irc_undernet='irssi -c undernet'
+alias irc_freenode='irssi -c freenode'
+
+# Aliases to enable color support for these
+alias ls='ls --color=auto'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# I want v to open vi and vi to open vim
+alias v=vim
+alias vi=vim
+
+# I need some aliases for tmuxp
+alias tp='tmuxp'
+alias tpl='tp load'
+alias ide='tpl .tmuxp.yml'
+
+# Add some GIT aliases for fixing typos
+alias fat='echo "Hey there fat fingers!!!\n" && git'
+alias got='fat'
+alias gto='fat'
+alias gti='fat'
+
+# Add alias for typo of mkdir
+alias mkdit='mkdir'
+
+alias exodus='/opt/Exodus/Exodus'
+
+# Create alias for switching exodus wallets
+alias exodus_deeney='export ACCOUNT=deeney         && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts/$ACCOUNT     ~/.config/Exodus/exodus.wallet && exodus'
+alias exodus_helena='export ACCOUNT=helena         && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts/$ACCOUNT     ~/.config/Exodus/exodus.wallet && exodus'
+alias exodus_house='export ACCOUNT=house           && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts/$ACCOUNT     ~/.config/Exodus/exodus.wallet && exodus'
+alias exodus_kids='export ACCOUNT=kids             && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts/$ACCOUNT     ~/.config/Exodus/exodus.wallet && exodus'
+alias exodus_maarnie='export ACCOUNT=maarnie       && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts/$ACCOUNT     ~/.config/Exodus/exodus.wallet && exodus'
+alias exodus_mariejoy='export ACCOUNT=mariejoy     && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts/$ACCOUNT     ~/.config/Exodus/exodus.wallet && exodus'
+alias exodus_motor='export ACCOUNT=motor           && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts/$ACCOUNT     ~/.config/Exodus/exodus.wallet && exodus'
+alias exodus_mxaddict='export ACCOUNT=mxaddict     && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts/$ACCOUNT     ~/.config/Exodus/exodus.wallet && exodus'
+alias exodus_savings='export ACCOUNT=savings       && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts/$ACCOUNT     ~/.config/Exodus/exodus.wallet && exodus'
+
+alias old_exodus_deeney='export ACCOUNT=deeney     && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts.old/$ACCOUNT ~/.config/Exodus/exodus.wallet && exodus'
+alias old_exodus_helena='export ACCOUNT=helena     && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts.old/$ACCOUNT ~/.config/Exodus/exodus.wallet && exodus'
+alias old_exodus_house='export ACCOUNT=house       && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts.old/$ACCOUNT ~/.config/Exodus/exodus.wallet && exodus'
+alias old_exodus_kids='export ACCOUNT=kids         && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts.old/$ACCOUNT ~/.config/Exodus/exodus.wallet && exodus'
+alias old_exodus_maarnie='export ACCOUNT=maarnie   && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts.old/$ACCOUNT ~/.config/Exodus/exodus.wallet && exodus'
+alias old_exodus_motor='export ACCOUNT=motor       && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts.old/$ACCOUNT ~/.config/Exodus/exodus.wallet && exodus'
+alias old_exodus_mxaddict='export ACCOUNT=mxaddict && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts.old/$ACCOUNT ~/.config/Exodus/exodus.wallet && exodus'
+alias old_exodus_savings='export ACCOUNT=savings   && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts.old/$ACCOUNT ~/.config/Exodus/exodus.wallet && exodus'
+
+# NAVCOIN Helper commands
+alias nstake='navcoin-cli getstakinginfo && navcoin-cli getstakereport && navcoin-cli getbalance'
+
+# Check if we have an debian based system
+if [ $(command -v apt-get) ]
+then
+	# Alias for system package manager
+	alias mxpacman='sudo apt-get'
+fi
+
+# Check if we have an ubuntu based system
+if [ $(command -v apt) ]
+then
+	# Alias for system package manager
+	alias mxpacman='sudo apt'
+fi
+
+# Some system package management aliases
+alias mxupdate='mxpacman update'
+alias mxinstall='mxpacman install'
+alias mxupgrade='mxpacman upgrade'
+alias mxdistupgrade='mxpacman dist-upgrade'
+alias mxautoclean='mxpacman autoclean'
+alias mxautoremove='mxpacman autoremove'
+
+# Alias for our mxmaintenance helper
+alias mxmaintenance='mxupdate && mxupgrade -y && mxdistupgrade -y && mxautoclean -y && mxautoremove -y'
