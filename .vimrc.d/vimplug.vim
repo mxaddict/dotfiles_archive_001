@@ -42,9 +42,10 @@ Plug 'w0rp/ale'
 Plug 'xsbeats/vim-blade'
 
 " Themes
-Plug 'benjaminwhite/Benokai'
-Plug 'nanotech/jellybeans.vim'
-Plug 'phanviet/vim-monokai-pro'
+"Plug 'benjaminwhite/Benokai'
+"Plug 'nanotech/jellybeans.vim'
+"Plug 'phanviet/vim-monokai-pro'
+Plug 'fmoralesc/molokayo'
 Plug 'tomasr/molokai'
 
 " Let vim plug know we are done
