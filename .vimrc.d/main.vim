@@ -5,7 +5,8 @@ if $COLORTERM == 'mate-terminal' || $COLORTERM == 'gnome-terminal'
 endif
 
 " Now that we have 256bit color, we can set our colorscheme
-color jellybeans
+set termguicolors
+colorscheme monokai_pro 
 
 " Turn on auto indention and make it smart! :)
 set autoindent

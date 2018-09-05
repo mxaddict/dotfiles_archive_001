@@ -44,6 +44,7 @@ Plug 'xsbeats/vim-blade'
 " Themes
 Plug 'benjaminwhite/Benokai'
 Plug 'nanotech/jellybeans.vim'
+Plug 'phanviet/vim-monokai-pro'
 Plug 'tomasr/molokai'
 
 " Let vim plug know we are done
