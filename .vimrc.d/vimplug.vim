@@ -2,9 +2,10 @@
 call plug#begin('~/.vim/plugged')
 
 " My Bundles here:
+Plug '2072/PHP-Indenting-for-VIm'
 Plug 'SirVer/ultisnips'
+Plug 'StanAngeloff/php.vim'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --system-libclang --tern-completer' }
-Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'edkolev/promptline.vim'
 Plug 'edkolev/tmuxline.vim'
@@ -20,14 +21,13 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'kien/ctrlp.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'mattn/emmet-vim'
+Plug 'mhinz/vim-signify'
 Plug 'miyakogi/seiya.vim'
 Plug 'mxw/vim-jsx'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'pangloss/vim-javascript'
 Plug 'plasticboy/vim-markdown'
 Plug 'scrooloose/nerdtree'
-Plug 'w0rp/ale'
-Plug 'shawncplus/phpcomplete.vim'
 Plug 'skatzteyp/vim-ultisnips-angular2'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tikhomirov/vim-glsl'
@@ -38,6 +38,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-haml'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/matchit.zip'
+Plug 'w0rp/ale'
 Plug 'xsbeats/vim-blade'
 
 " Themes
