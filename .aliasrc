@@ -1,4 +1,9 @@
 #!/bin/sh
+# QUIT the TERMINAL VIM style!
+alias :q=exit
+alias :qa=exit
+alias :wq=exit
+
 # Some quick Aliases for IRC related things
 alias irc='irssi'
 alias irctor='torsocks irssi'
