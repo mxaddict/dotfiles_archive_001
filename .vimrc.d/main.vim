@@ -2,7 +2,7 @@
 set t_Co=256
 
 " Now that we have 256bit color, we can set our colorscheme
-colorscheme srcery
+colorscheme base16
 
 " Turn on auto indention and make it smart! :)
 set autoindent

@@ -46,13 +46,9 @@ Plug 'w0rp/ale'
 Plug 'xsbeats/vim-blade'
 
 " Themes
-" Plug 'benjaminwhite/Benokai'
-" Plug 'dracula/vim', { 'as': 'dracula' }
-" Plug 'fmoralesc/molokayo'
 " Plug 'nanotech/jellybeans.vim'
-" Plug 'phanviet/vim-monokai-pro'
 " Plug 'tomasr/molokai'
-Plug 'srcery-colors/srcery-vim'
+Plug 'chriskempson/base16-vim'
 
 " Let vim plug know we are done
 call plug#end()
