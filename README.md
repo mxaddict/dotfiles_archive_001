@@ -21,13 +21,7 @@ Installation
 ```shell
 # Install requirements START
 ## FOR Ubuntu/Debian
-sudo apt-get install vim-gtk curl git cmake build-essential python-dev tmux clang -y
-
-## OR
-
-## FOR Arch
-sudo pacman -S vim curl git cmake base-devel python tmux clang -y
-
+sudo apt install neovim xclip curl git cmake build-essential python-dev tmux tmuxp clang silversearcher-ag -y
 # Install requirements END
 
 # seriously, that's it! and follow the prompts!
