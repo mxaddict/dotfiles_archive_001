@@ -1,11 +1,11 @@
 " Check if we have 256 support
-if $COLORTERM == 'mate-terminal' || $COLORTERM == 'gnome-terminal'
+if $COLORTERM == 'mate-terminal' || $COLORTERM == 'gnome-terminal' || $COLORTERM == 'truecolor'
 	" Now we know we have it, then use it!
 	set t_Co=256
 endif
 
 " Now that we have 256bit color, we can set our colorscheme
-colorscheme molokayo 
+colorscheme dracula
 
 " Turn on auto indention and make it smart! :)
 set autoindent
