@@ -28,6 +28,10 @@ sudo apt install neovim xclip curl git cmake build-essential python-dev tmux tmu
 sh <(curl -sL https://raw.githubusercontent.com/mxaddict/dotfiles/master/install)
 ```
 
+Optional Fonts
+---
+Download and install [NERD FONTS](https://github.com/ryanoasis/nerd-fonts)
+
 Platform support
 ---
 I have only tested this on ubuntu and debian based systems.
