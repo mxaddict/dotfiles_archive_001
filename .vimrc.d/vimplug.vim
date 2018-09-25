@@ -46,9 +46,8 @@ Plug 'w0rp/ale'
 Plug 'xsbeats/vim-blade'
 
 " Themes
-" Plug 'nanotech/jellybeans.vim'
-" Plug 'tomasr/molokai'
-Plug 'chriskempson/base16-vim'
+Plug 'nanotech/jellybeans.vim'
+Plug 'tomasr/molokai'
 
 " Let vim plug know we are done
 call plug#end()

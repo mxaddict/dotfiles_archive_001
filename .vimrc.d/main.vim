@@ -4,7 +4,7 @@ if !has('gui_running')
 endif
 
 " Now that we have 256bit color, we can set our colorscheme
-colorscheme base16-default-dark
+colorscheme molokai
 
 " Turn on auto indention and make it smart! :)
 set autoindent
