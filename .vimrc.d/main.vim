@@ -1,8 +1,10 @@
 " Use 256 colors
-set t_Co=256
+if !has('gui_running')
+  set t_Co=256
+endif
 
 " Now that we have 256bit color, we can set our colorscheme
-colorscheme base16
+colorscheme base16-default-dark
 
 " Turn on auto indention and make it smart! :)
 set autoindent
