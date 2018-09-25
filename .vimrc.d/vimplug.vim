@@ -44,11 +44,11 @@ Plug 'xsbeats/vim-blade'
 
 " Themes
 " Plug 'benjaminwhite/Benokai'
-" Plug 'nanotech/jellybeans.vim'
+Plug 'nanotech/jellybeans.vim'
 " Plug 'phanviet/vim-monokai-pro'
 " Plug 'fmoralesc/molokayo'
 " Plug 'tomasr/molokai'
-Plug 'dracula/vim', { 'as': 'dracula' }
+" Plug 'dracula/vim', { 'as': 'dracula' }
 
 " Let vim plug know we are done
 call plug#end()

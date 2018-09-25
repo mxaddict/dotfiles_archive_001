@@ -5,7 +5,7 @@ if $COLORTERM == 'mate-terminal' || $COLORTERM == 'gnome-terminal' || $COLORTERM
 endif
 
 " Now that we have 256bit color, we can set our colorscheme
-colorscheme dracula
+colorscheme jellybeans
 
 " Turn on auto indention and make it smart! :)
 set autoindent
