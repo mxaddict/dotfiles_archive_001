@@ -1,8 +1,5 @@
-" Check if we have 256 support
-if $COLORTERM == 'mate-terminal' || $COLORTERM == 'gnome-terminal' || $COLORTERM == 'truecolor'
-	" Now we know we have it, then use it!
-	set t_Co=256
-endif
+" Use 256 colors
+set t_Co=256
 
 " Now that we have 256bit color, we can set our colorscheme
 colorscheme srcery
