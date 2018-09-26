@@ -3,8 +3,11 @@ if !has('gui_running')
   set t_Co=256
 endif
 
+" Access colors present in 256 colorspace
+let base16colorspace=256
+
 " Now that we have 256bit color, we can set our colorscheme
-colorscheme molokai
+colorscheme base16-monokai
 
 " Turn on auto indention and make it smart! :)
 set autoindent

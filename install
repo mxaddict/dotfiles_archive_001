@@ -30,22 +30,34 @@ then
 	git config --global user.email "$GIT_EMAIL_NEW"
 fi
 
-# Where is the temp DIR for dotfiles?
-DOTFILES_TMP="${HOME}/.dotfiles"
+# Where is the DIR for dotfiles?
+DOTFILES_DIR="${HOME}/.dotfiles"
 
-# Where do we have the XDG_CONFIG_HOME?
-XDG_CONFIG_HOME="${HOME}/.config"
+# Where do we have the CONFIG_DIR?
+CONFIG_DIR="${HOME}/.config"
 
-# Create the XDG_CONFIG_HOME DIRECTORY
-mkdir -p ${XDG_CONFIG_HOME}
+# Where is the DIR for base16-shell
+BASE16_DIR="${CONFIG_DIR}/base16-shell"
 
-# Check if we already have a copy
-if [ ! -d $DOTFILES_TMP ]
+# Create the CONFIG_DIR DIRECTORY
+mkdir -p ${CONFIG_DIR}
+
+# Check if we already have a copy of dotfiles
+if [ ! -d $DOTFILES_DIR ]
 then
 	# Now clone the repo...
-	git clone https://github.com/mxaddict/dotfiles.git $DOTFILES_TMP
+	git clone https://github.com/mxaddict/dotfiles.git $DOTFILES_DIR
 else
-	cd $DOTFILES_TMP && git fetch && git checkout origin/master
+	cd $DOTFILES_DIR && git fetch && git checkout origin/master
+fi
+
+# Check if we already have a copy of base16-shell
+if [ ! -d $BASE16_DIR ]
+then
+	# Now clone the repo...
+	git clone https://github.com/chriskempson/base16-shell.git $BASE16_DIR
+else
+	cd $BASE16_DIR && git fetch && git checkout origin/master
 fi
 
 # Check if we have  ~/.vimrc.d
@@ -56,7 +68,7 @@ then
 fi
 
 # Copy the .vimrc.d/ DIR to home DIR
-cp -r $DOTFILES_TMP/.vimrc.d ~/
+cp -r $DOTFILES_DIR/.vimrc.d ~/
 
 # Check if we have  ~/.mutt
 if [ -d ~/.mutt ]
@@ -66,7 +78,7 @@ then
 fi
 
 # Copy the .mutt/ DIR to home DIR
-cp -r $DOTFILES_TMP/.mutt ~/
+cp -r $DOTFILES_DIR/.mutt ~/
 
 # Check if we have  ~/.tmuxp
 if [ -d ~/.tmuxp ]
@@ -76,7 +88,7 @@ then
 fi
 
 # Copy the .tmuxp/ DIR to home DIR
-cp -r $DOTFILES_TMP/.tmuxp ~/
+cp -r $DOTFILES_DIR/.tmuxp ~/
 
 # Check if our plugin manager is installed
 if [ ! -f ~/.vim/autoload/plug.vim ]
@@ -90,19 +102,19 @@ fi
 echo "source ~/.vimrc.d/vimplug.vim" > ~/.vimrc
 
 # Make some symlinks...
-if [ ! -h $XDG_CONFIG_HOME/nvim ]
+if [ ! -h $CONFIG_DIR/nvim ]
 then
-	ln -s ~/.vim $XDG_CONFIG_HOME/nvim
+	ln -s ~/.vim $CONFIG_DIR/nvim
 fi
 
 # Make some symlinks...
-if [ ! -h $XDG_CONFIG_HOME/nvim/init.vim ]
+if [ ! -h $CONFIG_DIR/nvim/init.vim ]
 then
-	ln -s ~/.vimrc $XDG_CONFIG_HOME/nvim/init.vim
+	ln -s ~/.vimrc $CONFIG_DIR/nvim/init.vim
 fi
 
 # Check if we even want to install/update plugins
-if [ "$UPDATE_PLUGINS" != "n" ]
+if [ "$UPDATE_PLUGINS" == "Y" || "$UPDATE_PLUGINS" == "y" || "$UPDATE_PLUGINS" == "" ]
 then
 	# Install Vim Plugins
 	printf "Installing Vim Plugins, Will take a while depending on connection speed!\n"
@@ -110,17 +122,17 @@ then
 fi
 
 # Copy all our custom files!
-cat $DOTFILES_TMP/.aliasrc      > ~/.aliasrc
-cat $DOTFILES_TMP/.bash_profile > ~/.bash_profile
-cat $DOTFILES_TMP/.bashrc       > ~/.bashrc
-cat $DOTFILES_TMP/.muttrc       > ~/.muttrc
-cat $DOTFILES_TMP/.pathrc       > ~/.pathrc
-cat $DOTFILES_TMP/.shrc         > ~/.shrc
-cat $DOTFILES_TMP/.tern-config  > ~/.tern-config
-cat $DOTFILES_TMP/.tmux.conf    > ~/.tmux.conf
-cat $DOTFILES_TMP/.vimrc        > ~/.vimrc
-cat $DOTFILES_TMP/.zsh_profile  > ~/.zsh_profile
-cat $DOTFILES_TMP/.zshrc        > ~/.zshrc
+cat $DOTFILES_DIR/.aliasrc      > ~/.aliasrc
+cat $DOTFILES_DIR/.bash_profile > ~/.bash_profile
+cat $DOTFILES_DIR/.bashrc       > ~/.bashrc
+cat $DOTFILES_DIR/.muttrc       > ~/.muttrc
+cat $DOTFILES_DIR/.pathrc       > ~/.pathrc
+cat $DOTFILES_DIR/.shrc         > ~/.shrc
+cat $DOTFILES_DIR/.tern-config  > ~/.tern-config
+cat $DOTFILES_DIR/.tmux.conf    > ~/.tmux.conf
+cat $DOTFILES_DIR/.vimrc        > ~/.vimrc
+cat $DOTFILES_DIR/.zsh_profile  > ~/.zsh_profile
+cat $DOTFILES_DIR/.zshrc        > ~/.zshrc
 
 # Check if we have promptline setup already
 if [ -d ~/.vim/plugged/promptline.vim ]
@@ -135,6 +147,12 @@ then
 	# Setup Promptline!
 	vim +Tmuxline +"TmuxlineSnapshot! ~/.tmuxline.conf" +qall
 fi
+
+# Load the .shrc so we can use base16
+source ~/.shrc
+
+# Setup base16 monokai
+base16_monokai
 
 # Install done! WEW!
 printf "Install DONE! WEW!\n"
