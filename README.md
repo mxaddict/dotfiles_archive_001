@@ -25,7 +25,7 @@ sudo apt install neovim xclip curl git cmake build-essential python-dev tmux tmu
 # Install requirements END
 
 # seriously, that's it! and follow the prompts!
-sh <(curl -sL https://raw.githubusercontent.com/mxaddict/dotfiles/master/install)
+bash <(curl -sL https://raw.githubusercontent.com/mxaddict/dotfiles/master/install)
 ```
 
 Optional Fonts
