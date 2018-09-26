@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Set GIT to use colors
 git config --global color.ui auto
 
@@ -114,7 +114,7 @@ then
 fi
 
 # Check if we even want to install/update plugins
-if [ "$UPDATE_PLUGINS" == "Y" || "$UPDATE_PLUGINS" == "y" || "$UPDATE_PLUGINS" == "" ]
+if [ "$UPDATE_PLUGINS" == "Y" ] || [ "$UPDATE_PLUGINS" == "y" ] || [ "$UPDATE_PLUGINS" == "" ]
 then
 	# Install Vim Plugins
 	printf "Installing Vim Plugins, Will take a while depending on connection speed!\n"
@@ -148,11 +148,11 @@ then
 	vim +Tmuxline +"TmuxlineSnapshot! ~/.tmuxline.conf" +qall
 fi
 
-# Load the .shrc so we can use base16
-source ~/.shrc
-
-# Setup base16 monokai
-base16_monokai
+# Set our base16 theme
+[ -n "$PS1" ] && \
+	[ -s "${BASE16_DIR}/profile_helper.sh" ] && \
+	eval "$("${BASE16_DIR}/profile_helper.sh")" && \
+	base16_monokai
 
 # Install done! WEW!
 printf "Install DONE! WEW!\n"
