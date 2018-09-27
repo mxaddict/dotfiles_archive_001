@@ -100,7 +100,7 @@ then
 fi
 
 # Setup the vimrc for temporary use!
-echo "source ~/.vimrc.d/vimplug.vim" > ~/.vimrc
+echo "source ~/.vimrc.d/plug.vim" > ~/.vimrc
 
 # Make some symlinks...
 if [ ! -h $CONFIG_DIR/nvim ]

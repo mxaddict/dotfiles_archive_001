@@ -1,5 +1,5 @@
 " Load PLUG FIRST! So that it will manage most other plugins!
-source ~/.vimrc.d/vimplug.vim
+source ~/.vimrc.d/plug.vim
 
 " Load all our plguin files files! :D
 for vscript in split(glob('~/.vimrc.d/plugins/*.vim'), '\n')
