@@ -7,6 +7,3 @@ let g:ale_linters.php = ['php', 'phpcs']
 let g:ale_fixers = {}
 let g:ale_fixers.javascript = ['eslint']
 let g:ale_fixers.php = ['phpcbf']
-
-" Autofix
-let g:ale_fix_on_save = 1
