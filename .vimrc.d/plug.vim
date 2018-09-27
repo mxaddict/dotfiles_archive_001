@@ -1,6 +1,15 @@
 " Load up vim plug
 call plug#begin('~/.vim/plugged')
 
+" Deoplete!!!
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
 " My Bundles here:
 Plug '2072/PHP-Indenting-for-VIm'
 Plug 'SirVer/ultisnips'
@@ -41,18 +50,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-haml'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
+Plug 'tweekmonster/deoplete-clang2'
 Plug 'vim-scripts/matchit.zip'
 Plug 'w0rp/ale'
 Plug 'xsbeats/vim-blade'
-
-" Deoplete!!!
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
 
 " Themes
 Plug 'chriskempson/base16-vim'
