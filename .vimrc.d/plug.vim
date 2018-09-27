@@ -5,7 +5,6 @@ call plug#begin('~/.vim/plugged')
 Plug '2072/PHP-Indenting-for-VIm'
 Plug 'SirVer/ultisnips'
 Plug 'StanAngeloff/php.vim'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --system-libclang --tern-completer' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'edkolev/promptline.vim'
 Plug 'edkolev/tmuxline.vim'
@@ -45,6 +44,15 @@ Plug 'tpope/vim-surround'
 Plug 'vim-scripts/matchit.zip'
 Plug 'w0rp/ale'
 Plug 'xsbeats/vim-blade'
+
+" Deoplete!!!
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 " Themes
 Plug 'chriskempson/base16-vim'
