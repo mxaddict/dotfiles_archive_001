@@ -14,6 +14,7 @@ endif
 Plug '2072/PHP-Indenting-for-VIm'
 Plug 'SirVer/ultisnips'
 Plug 'StanAngeloff/php.vim'
+Plug 'alvan/vim-closetag'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'edkolev/promptline.vim'
 Plug 'edkolev/tmuxline.vim'
