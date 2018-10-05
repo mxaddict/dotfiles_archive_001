@@ -92,3 +92,9 @@ alias mxautoremove='mxpacman autoremove'
 
 # Alias for our mxmaintenance helper
 alias mxmaintenance='mxupdate && mxupgrade -y && mxdistupgrade -y && mxautoclean -y && mxautoremove -y'
+
+# Alias for easy clipping
+if [ $(command -v xsel)
+then
+	alias clip='xsel -b'
+fi
