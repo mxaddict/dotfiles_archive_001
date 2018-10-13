@@ -82,3 +82,13 @@ then
 	# JAVA! WHERE DO YOU LIVE?
 	export JAVA_HOME="/usr/lib/jvm/java-9-oracle"
 fi
+
+# Check if we got Go Lang
+if [ -d "/usr/local/go" ]
+then
+	export PATH=$PATH:/usr/local/go/bin
+
+	# set Go path environment variables
+	export GOPATH=$HOME/Projects/go
+	export PATH=$PATH:$GOPATH/bin
+fi
