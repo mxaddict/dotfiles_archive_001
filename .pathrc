@@ -1,91 +1,66 @@
 #!/bin/sh
-# Check if ${HOME}/.bin/ exists
-if [ -d "${HOME}/.bin/" ]
+# Check if ${HOME}/.bin exists
+if [ -d "${HOME}/.bin" ]
 then
 	# add my ${HOME}/bin to the path
-	export PATH=$PATH":${HOME}/.bin/"
+	export PATH=$PATH":${HOME}/.bin"
 fi
 
-# Check if ${HOME}/.sdks/android/tools/ exists
-if [ -d "${HOME}/.sdks/android/tools/" ]
+# Check if ${HOME}/.sdks/android/tools exists
+if [ -d "${HOME}/.sdks/android/tools" ]
 then
 	# add my android tools to the path
-	export PATH=$PATH":${HOME}/.sdks/android/tools/"
+	export PATH=$PATH":${HOME}/.sdks/android/tools"
+	export PATH=$PATH":${HOME}/.sdks/android/tools/bin"
 fi
 
-# Check if ${HOME}/.sdks/android/platform-tools/ exists
-if [ -d "${HOME}/.sdks/android/platform-tools/" ]
+# Check if ${HOME}/.sdks/android/platform-tools exists
+if [ -d "${HOME}/.sdks/android/tools" ]
 then
-	# add my android platform tools to the path
-	export PATH=$PATH":${HOME}/.sdks/android/platform-tools/"
+	# add my android tools to the path
+	export PATH=$PATH":${HOME}/.sdks/android/platform-tools"
+	export PATH=$PATH":${HOME}/.sdks/android/platform-tools/bin"
 fi
 
-# Check if ${HOME}/.composer/vendor/bin/ exists
-if [ -d "${HOME}/.composer/vendor/bin/" ]
-then
-	# Add GLOBAL composer to PATH so we can use it in BASH!
-	export PATH=$PATH":${HOME}/.composer/vendor/bin/"
-fi
-
-# Check if ${HOME}/.config/composer/vendor/bin/ exists
-if [ -d "${HOME}/.config/composer/vendor/bin/" ]
+# Check if ${HOME}/.composer/vendor/bin exists
+if [ -d "${HOME}/.composer/vendor/bin" ]
 then
 	# Add GLOBAL composer to PATH so we can use it in BASH!
-	export PATH=$PATH":${HOME}/.config/composer/vendor/bin/"
+	export PATH=$PATH":${HOME}/.composer/vendor/bin"
 fi
 
-# Check if ${HOME}/.sdks/android/ exists
-if [ -d "${HOME}/.sdks/android/" ]
+# Check if ${HOME}/.config/composer/vendor/bin exists
+if [ -d "${HOME}/.config/composer/vendor/bin" ]
+then
+	# Add GLOBAL composer to PATH so we can use it in BASH!
+	export PATH=$PATH":${HOME}/.config/composer/vendor/bin"
+fi
+
+# Check if ${HOME}/.sdks/android exists
+if [ -d "${HOME}/.sdks/android" ]
 then
 	# add my android sdk as ANDROID_HOME so that android studio will work nicely
-	export ANDROID_HOME="${HOME}/.sdks/android/"
-fi
-
-# Check if ${HOME}/.sdk/android/ exists
-if [ -d "${HOME}/.sdk/android/" ]
-then
-	# add my android sdk as ANDROID_HOME so that android studio will work nicely
-	export ANDROID_HOME="${HOME}/.sdk/android/"
-fi
-
-# Check if we have java 7...
-if [ -d "/usr/lib/jvm/java-7-openjdk-amd64/" ]
-then
-	# JAVA! WHERE DO YOU LIVE?
-	export JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64/"
+	export ANDROID_HOME="${HOME}/.sdks/android"
 fi
 
 # Check if we have java 8...
-if [ -d "/usr/lib/jvm/java-8-openjdk-amd64/" ]
+if [ -d "/usr/lib/jvm/java-8-openjdk-amd64" ]
 then
 	# JAVA! WHERE DO YOU LIVE?
-	export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/"
+	export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
 fi
 
-# Check if we have java 9...
-if [ -d "/usr/lib/jvm/java-9-openjdk-amd64/" ]
+# Check if we have java 11...
+if [ -d "/usr/lib/jvm/java-11-openjdk-amd64" ]
 then
 	# JAVA! WHERE DO YOU LIVE?
-	export JAVA_HOME="/usr/lib/jvm/java-9-openjdk-amd64/"
-fi
-
-# Check if we have java 8 oracle
-if [ -d "/usr/lib/jvm/java-8-oracle" ]
-then
-	# JAVA! WHERE DO YOU LIVE?
-	export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
-fi
-
-# Check if we have java 9 oracle
-if [ -d "/usr/lib/jvm/java-9-oracle" ]
-then
-	# JAVA! WHERE DO YOU LIVE?
-	export JAVA_HOME="/usr/lib/jvm/java-9-oracle"
+	export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
 fi
 
 # Check if we got Go Lang
 if [ -d "/usr/local/go" ]
 then
+	# Add go bin to the path
 	export PATH=$PATH:/usr/local/go/bin
 
 	# set Go path environment variables
