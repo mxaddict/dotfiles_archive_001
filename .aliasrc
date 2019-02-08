@@ -67,7 +67,7 @@ alias old_exodus_savings='export ACCOUNT=savings   && rm ~/.config/Exodus/exodus
 
 # NAVCOIN Helper commands
 alias nav='navcoin-cli'
-alias nstake='nav getstakereport && nav getstakinginfo && nav getbalance'
+alias nstake='nav getstakereport && nav getstakinginfo && nav getwalletinfo'
 
 # Check if we have an debian based system
 if [ $(command -v apt-get) ]
