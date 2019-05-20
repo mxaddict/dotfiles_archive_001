@@ -13,6 +13,13 @@ then
 	export BOLOS_SDK="${HOME}/.sdks/bolos/nanos"
 fi
 
+# Check if ${HOME}/.sdks/bolos/env exists
+if [ -d "${HOME}/.sdks/bolos/env" ]
+then
+	# add my bolos env as BOLOS_ENV
+	export BOLOS_ENV="${HOME}/.sdks/bolos/env"
+fi
+
 # Check if ${HOME}/.sdks/android/tools exists
 if [ -d "${HOME}/.sdks/android/tools" ]
 then
