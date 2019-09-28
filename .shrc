@@ -25,3 +25,6 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 
 # load the nvm shell configs
 [ -f ~/.nvm/nvm.sh ] && source ~/.nvm/nvm.sh
+
+# load custom config
+[ -d ~/.bashrc.d ] && source ~/.bashrc.d/*
