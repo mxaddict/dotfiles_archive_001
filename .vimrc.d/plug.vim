@@ -20,6 +20,7 @@ Plug 'edkolev/promptline.vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'elzr/vim-json'
 Plug 'evidens/vim-twig'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'gabesoft/vim-ags'
 Plug 'gregsexton/gitv'
 Plug 'hail2u/vim-css3-syntax'
