@@ -47,7 +47,7 @@ mkdir -p ${CONFIG_DIR}
 if [ ! -d $DOTFILES_DIR ]
 then
 	# Now clone the repo...
-	git clone https://github.com/mxaddict/dotfiles.git $DOTFILES_DIR
+	git clone https://github.com/reilg/dotfiles.git $DOTFILES_DIR
 else
 	cd $DOTFILES_DIR && git fetch && git checkout origin/master
 fi
