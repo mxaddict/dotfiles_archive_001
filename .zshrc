@@ -88,7 +88,12 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 source ~/.shrc
 
 # Load fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if [ -f ~/.fzf.zsh ]
+then 
+	source ~/.fzf.zsh
+	export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
+	export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+fi
 
 # Make sure autojump is setup
 [[ -s /home/reil/.autojump/etc/profile.d/autojump.sh ]] && source /home/reil/.autojump/etc/profile.d/autojump.sh
