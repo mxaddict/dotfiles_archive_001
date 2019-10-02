@@ -177,7 +177,7 @@ vno <leader>fn s<C-R>=expand("%:t:r")<CR><ESC>
 
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
-command W w !sudo tee % > /dev/null
+command! W w !sudo tee % > /dev/null
 
 " FUNCTION to Convert PRE php 5.4 array syntax to new 5.4+ syntax...
 function! PHPShortHandArrayConverter() range

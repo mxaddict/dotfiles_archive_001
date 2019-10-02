@@ -93,6 +93,15 @@ then
 	source ~/.fzf.zsh
 	export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
 	export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+	prvw='cat {}'
+	# Use bat if installed
+	if type bat &>/dev/null
+	then
+		prvw='bat --style=numbers --color=always {}'
+	fi
+
+	export FZF_CTRL_T_OPTS="--height 50% --preview-window right:70%:wrap --preview '${prvw}'"
 fi
 
 # Make sure autojump is setup
