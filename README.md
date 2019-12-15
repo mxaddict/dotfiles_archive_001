@@ -21,11 +21,11 @@ Installation
 ```shell
 # Install requirements START
 ## FOR Ubuntu/Debian
-sudo apt install neovim xclip curl git cmake build-essential python-dev tmux tmuxp clang silversearcher-ag autojump -y
+sudo apt install neovim xclip curl git cmake build-essential python-dev tmux tmuxp clang silversearcher-ag -y
 # Install requirements END
 
 # seriously, that's it! and follow the prompts!
-bash <(curl -sL https://raw.githubusercontent.com/mxaddict/dotfiles/master/install)
+bash <(curl -sL https://raw.githubusercontent.com/reilg/dotfiles/master/install)
 ```
 
 Optional Fonts

@@ -105,7 +105,7 @@ then
 fi
 
 # Make sure autojump is setup
-[[ -s /home/reil/.autojump/etc/profile.d/autojump.sh ]] && source /home/reil/.autojump/etc/profile.d/autojump.sh
+[[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
 
 export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
