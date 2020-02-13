@@ -71,13 +71,6 @@ then
 	export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
 fi
 
-# Check if we got Go Lang
-if [ -d "/usr/local/go" ]
-then
-	# Add go bin to the path
-	export PATH=$PATH:/usr/local/go/bin
-
-	# set Go path environment variables
-	export GOPATH=$HOME/Projects/go
-	export PATH=$PATH:$GOPATH/bin
-fi
+export GOPATH="$HOME/Projects/go"
+export GOROOT="$HOME/.local/share/golang"
+export PATH="$GOPATH/bin:$PATH"

@@ -9,6 +9,3 @@ let g:promptline_preset = {
 	\'z':    [ promptline#slices#vcs_branch() ],
 	\'warn': [ promptline#slices#last_exit_code(), promptline#slices#jobs() ]
 \}
-
-" Disable the custom font.
-let g:promptline_powerline_symbols = 0
