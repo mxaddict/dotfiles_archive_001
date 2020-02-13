@@ -5,4 +5,4 @@ let g:tmuxline_theme = 'lightline_visual'
 let g:tmuxline_preset = 'full'
 
 " Don't use the powerline symbols!
-" let g:tmuxline_powerline_separators = 0
+let g:tmuxline_powerline_separators = 0
