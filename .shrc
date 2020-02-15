@@ -29,5 +29,12 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 # load autojump if installed
 [ -s /usr/share/autojump/autojump.sh ] && source /usr/share/autojump/autojump.sh
 
+# load n if installed
+if [ -f ~/n/bin/n ]
+then
+	export N_PREFIX="$HOME/n"
+	[[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
+fi
+
 # load custom config
 [ -d ~/.bashrc.d ] && source ~/.bashrc.d/*
