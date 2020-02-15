@@ -104,6 +104,4 @@ then
 	export FZF_CTRL_T_OPTS="--height 50% --preview-window right:70%:wrap --preview '${prvw}'"
 fi
 
-# Make sure autojump is setup
-[[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
