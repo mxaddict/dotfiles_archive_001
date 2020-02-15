@@ -17,15 +17,6 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 # load up the custom CLI PROMPT
 [ -f ~/.promptline.sh ] && source ~/.promptline.sh
 
-# load the rvm shell configs if installed system wide
-[ -f /etc/profile.d/rvm.sh ] && source /etc/profile.d/rvm.sh
-
-# load the rvm shell configs
-[ -f ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm
-
-# load the nvm shell configs
-[ -f ~/.nvm/nvm.sh ] && source ~/.nvm/nvm.sh
-
 # load autojump if installed
 [ -s /usr/share/autojump/autojump.sh ] && source /usr/share/autojump/autojump.sh
 
