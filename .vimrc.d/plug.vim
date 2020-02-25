@@ -4,8 +4,10 @@ call plug#begin('~/.vim/plugged')
 " Deoplete!!!
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'Shougo/deoplete-clangx'
 else
   Plug 'Shougo/deoplete.nvim'
+  Plug 'Shougo/deoplete-clangx'
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
