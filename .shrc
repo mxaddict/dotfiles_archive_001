@@ -28,4 +28,4 @@ then
 fi
 
 # load custom config
-[ -d ~/.bashrc.d ] && source ~/.bashrc.d/*
+[ -d ~/.customrc.d ] && source ~/.customrc.d*/.*
