@@ -71,6 +71,11 @@ then
 	export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
 fi
 
+if [ -d "${HOME}/.npm-global" ]
+then
+	export PATH="$PATH:$HOME/.npm-global/bin"
+fi
+
 export GOPATH="$HOME/Projects/go"
 export GOROOT="$HOME/.local/share/golang"
 export PATH="$GOPATH/bin:$PATH"

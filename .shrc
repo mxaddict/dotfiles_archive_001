@@ -28,4 +28,4 @@ then
 fi
 
 # load custom config
-[ -d ~/.customrc.d ] && source ~/.customrc.d*/.*
+[ -f ~/.localrc ] && source ~/.localrc
