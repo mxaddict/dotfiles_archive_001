@@ -105,3 +105,14 @@ then
 fi
 
 autoload -U compinit && compinit -u
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f $HOME/Projects/payrent-api/node_modules/tabtab/.completions/serverless.zsh ]] && . $HOME/Projects/payrent-api/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f $HOME/Projects/payrent-api/node_modules/tabtab/.completions/sls.zsh ]] && . $HOME/Projects/payrent-api/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f $HOME/Projects/payrent-api/node_modules/tabtab/.completions/slss.zsh ]] && . $HOME/Projects/payrent-api/node_modules/tabtab/.completions/slss.zsh
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
