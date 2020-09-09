@@ -1,7 +1,7 @@
 # Set up the prompt
 autoload -Uz promptinit
 promptinit
-prompt adam1
+prompt redhat
 
 # We need to turn on shared history and ignoring dupes...
 setopt histignorealldups sharehistory
