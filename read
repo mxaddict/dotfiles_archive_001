@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Syncs dotfiles you have on your system into the repository
+# for easier diff-ing
+dotfiles=(
+	.aliasrc
+	.bash_profile
+	.bashrc
+	.pathrc
+	.shrc
+	.tern-config
+	.tmux.conf
+	.vimrc
+	.zsh_profile
+	.zshrc
+)
+
+for f in "${dotfiles[@]}"
+do
+	if [ -f $HOME/$f ]
+	then
+		cat $HOME/$f > ./$f
+	fi
+done

@@ -21,7 +21,7 @@ Installation
 ```shell
 # Install requirements START
 ## FOR Ubuntu/Debian
-sudo apt install neovim xsel curl git cmake build-essential python-dev tmux tmuxp clang silversearcher-ag autojump -y
+sudo apt install xsel curl git cmake build-essential python-dev tmux tmuxp clang silversearcher-ag -y
 # Install requirements END
 
 # seriously, that's it! and follow the prompts!

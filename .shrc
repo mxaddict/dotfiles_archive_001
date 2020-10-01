@@ -17,8 +17,8 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 # load up the custom CLI PROMPT
 [ -f ~/.promptline.sh ] && source ~/.promptline.sh
 
-# load autojump if installed
-[ -s /usr/share/autojump/autojump.sh ] && source /usr/share/autojump/autojump.sh
+# load z script
+[ -f ~/z.sh ] && source ~/z.sh
 
 # load n if installed
 if [ -f ~/n/bin/n ]
