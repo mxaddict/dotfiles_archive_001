@@ -22,3 +22,6 @@ do
 		cat $HOME/$f > ./$f
 	fi
 done
+
+# Sync vim files
+cp -r $HOME/.vimrc.d ./
