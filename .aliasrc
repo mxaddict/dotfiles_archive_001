@@ -26,8 +26,8 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # I want v to open vi and vi to open vim
-alias v=nvim
-alias vi=v
+alias v=vim
+alias vi=nvim
 
 # I need some aliases for tmuxp
 alias tp='tmuxp'
@@ -49,6 +49,15 @@ then
 	# Alias for system package manager
 	alias mxpacman='sudo apt-get'
 fi
+
+# Some helpers
+alias zconfig="vi $HOME/.zshrc"
+alias reload="source $HOME/.shrc"
+alias paths="sed 's/:/\n/g' <<< \"$PATH\""
+alias ag='ag --hidden'
+
+# Alias z script with j
+alias j='z'
 
 # Check if we have an ubuntu based system
 if [ $(command -v apt) ]
