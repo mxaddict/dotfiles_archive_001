@@ -26,8 +26,8 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # I want v to open vi and vi to open vim
-alias v=vim
-alias vi=vim
+alias v=nvim
+alias vi=v
 
 # I need some aliases for tmuxp
 alias tp='tmuxp'
