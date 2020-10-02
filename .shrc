@@ -1,6 +1,6 @@
 #!/bin/sh
 # Set default editor to vim
-export EDITOR="vim"
+export EDITOR="nvim"
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
