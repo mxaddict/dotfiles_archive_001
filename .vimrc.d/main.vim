@@ -243,5 +243,5 @@ command! ZoomToggle call s:ZoomToggle()
 nnoremap <silent> <leader>z :ZoomToggle<CR>
 
 " set highlighting for custom files
-autocmd BufNewFile,BufRead .env*,.*rc set syntax=sh filetype=sh
+autocmd BufNewFile,BufRead .env* set syntax=sh filetype=sh
 " END OF FILE
