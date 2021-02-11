@@ -39,6 +39,7 @@ alias fat='echo "Hey there fat fingers!!!\n" && git'
 alias got='fat'
 alias gto='fat'
 alias gti='fat'
+alias igit='fat'
 
 # Add alias for typo of mkdir
 alias mkdit='mkdir'
