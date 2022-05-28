@@ -2,8 +2,15 @@
 # Check if ${HOME}/.bin exists
 if [ -d "${HOME}/.bin" ]
 then
-	# add my ${HOME}/bin to the path
+	# add my ${HOME}/.bin to the path
 	export PATH=$PATH":${HOME}/.bin"
+fi
+
+# Check if ${HOME}/.local/bin exists
+if [ -d "${HOME}/.local/bin" ]
+then
+	# add my ${HOME}/.local/bin to the path
+	export PATH=$PATH":${HOME}/.local/bin"
 fi
 
 # Check if ${HOME}/.sdks/bolos/nanos exists
