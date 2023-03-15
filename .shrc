@@ -2,11 +2,17 @@
 # Set default editor to vim
 export EDITOR="vim"
 
-# Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -n "$PS1" ] && \
-	[ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-	eval "$("$BASE16_SHELL/profile_helper.sh")"
+# Check if we have ZSH as our shell
+if [ $SHELL=="/bin/zsh" ]; then
+	# We have zsh, so we use base16-shell.plugin.zsh
+	source ~/.config/base16-shell/base16-shell.plugin.zsh
+else
+	# We don't have zsh, so we use the regular shell script
+	source ~/.config/base16-shell/profile_helper.sh
+fi
+
+# set our base16 theme
+base16_monokai
 
 # Load our path exports
 [ -f ~/.pathrc ] && source ~/.pathrc
