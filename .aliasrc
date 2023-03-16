@@ -29,6 +29,9 @@ alias l='ls -CF'
 alias v=vim
 alias vi=vim
 
+# Alias make to use max cores/threads
+alias make='make -j $(nproc)'
+
 # I need some aliases for tmuxp
 alias tp='tmuxp'
 alias tpl='tp load'
