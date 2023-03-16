@@ -2,15 +2,6 @@
 # Set default editor to vim
 export EDITOR="vim"
 
-# Check if we have ZSH as our shell
-if [ $SHELL=="/bin/zsh" ]; then
-	# We have zsh, so we use base16-shell.plugin.zsh
-	source ~/.config/base16-shell/base16-shell.plugin.zsh
-else
-	# We don't have zsh, so we use the regular shell script
-	source ~/.config/base16-shell/profile_helper.sh
-fi
-
 # set our base16 theme
 base16_monokai
 

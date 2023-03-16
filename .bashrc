@@ -6,8 +6,8 @@ HISTCONTROL=ignoredups:ignorespace
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=5000
-HISTFILESIZE=5000
+HISTSIZE=10000
+HISTFILESIZE=10000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -18,3 +18,6 @@ source ~/.shrc
 
 # Load fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Load base16
+[ -f ~/.config/base16-shell/profile_helper.sh ] && source ~/.config/base16-shell/profile_helper.sh
