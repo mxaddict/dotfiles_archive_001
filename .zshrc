@@ -70,6 +70,5 @@ source ~/.shrc
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Load base16
-[ -f ~/.config/base16-shell/base16-shell.plugin.zsh ] && \
-	source ~/.config/base16-shell/base16-shell.plugin.zsh && \
-	base16_monokai
+[ -f ~/.config/base16-shell/base16-shell.plugin.zsh ] && source ~/.config/base16-shell/base16-shell.plugin.zsh
+base16_monokai

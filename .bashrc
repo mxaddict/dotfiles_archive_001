@@ -20,6 +20,5 @@ source ~/.shrc
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # Load base16
-[ -f ~/.config/base16-shell/profile_helper.sh ] && \
-	source ~/.config/base16-shell/profile_helper.sh && \
-	base16_monokai
+[ -f ~/.config/base16-shell/profile_helper.sh ] && source ~/.config/base16-shell/profile_helper.sh
+base16_monokai
