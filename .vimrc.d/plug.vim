@@ -73,5 +73,8 @@ Plug 'mg979/vim-visual-multi'
 " use via ga= for example
 Plug 'junegunn/vim-easy-align'
 
+" Add icons for some plugins that support it
+Plug 'ryanoasis/vim-devicons'
+
 " Let vim plug know we are done
 call plug#end()
