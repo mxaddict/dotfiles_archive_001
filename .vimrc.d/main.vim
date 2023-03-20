@@ -162,3 +162,15 @@ no <C-l> <C-W>l
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
+
+" FUNCTION FOR VISUAL YANK
+function! VisualYank()
+	try
+		let a_save = @a
+		normal! gv"ay
+		return @a
+	finally
+		let @a = a_save
+	endtry
+	return @a
+endfunction
