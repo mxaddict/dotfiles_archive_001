@@ -71,26 +71,6 @@ fi
 # Copy the .vimrc.d/ DIR to home DIR
 cp -r $DOTFILES_DIR/.vimrc.d ~/
 
-# Check if we have  ~/.mutt
-if [ -d ~/.mutt ]
-then
-	# Remove the OLD .mutt/ DIR from home DIR
-	rm -r ~/.mutt
-fi
-
-# Copy the .mutt/ DIR to home DIR
-cp -r $DOTFILES_DIR/.mutt ~/
-
-# Check if we have  ~/.tmuxp
-if [ -d ~/.tmuxp ]
-then
-	# Remove the OLD .tmuxp/ DIR from home DIR
-	rm -r ~/.tmuxp
-fi
-
-# Copy the .tmuxp/ DIR to home DIR
-cp -r $DOTFILES_DIR/.tmuxp ~/
-
 # Check if our plugin manager is installed
 if [ ! -f ~/.vim/autoload/plug.vim ]
 then
@@ -126,10 +106,8 @@ fi
 cat $DOTFILES_DIR/.aliasrc      > ~/.aliasrc
 cat $DOTFILES_DIR/.bash_profile > ~/.bash_profile
 cat $DOTFILES_DIR/.bashrc       > ~/.bashrc
-cat $DOTFILES_DIR/.muttrc       > ~/.muttrc
 cat $DOTFILES_DIR/.pathrc       > ~/.pathrc
 cat $DOTFILES_DIR/.shrc         > ~/.shrc
-cat $DOTFILES_DIR/.tern-config  > ~/.tern-config
 cat $DOTFILES_DIR/.tmux.conf    > ~/.tmux.conf
 cat $DOTFILES_DIR/.vimrc        > ~/.vimrc
 cat $DOTFILES_DIR/.zsh_profile  > ~/.zsh_profile
@@ -148,12 +126,6 @@ then
 	# Setup Promptline!
 	vim +Tmuxline +"TmuxlineSnapshot! ~/.tmuxline.conf" +qall
 fi
-
-# Set our base16 theme
-[ -n "$PS1" ] && \
-	[ -s "${BASE16_DIR}/profile_helper.sh" ] && \
-	eval "$("${BASE16_DIR}/profile_helper.sh")" && \
-	base16_monokai
 
 # Install done! WEW!
 printf "Install DONE! WEW!\n"
