@@ -1,3 +1,3 @@
 " Setup the NERDTreeToggle shortcuts!
-no <silent>  n :NERDTreeToggle<CR>
-vno <silent> n :NERDTreeToggle<CR>
+no <silent>  t :NERDTreeToggle<CR>
+vno <silent> t :NERDTreeToggle<CR>
