@@ -13,18 +13,17 @@ colorscheme base16-monokai
 set autoindent
 set smartindent
 
-" set scrolloff to 8 so that we always have at least 8 lines between cursor and end
-" of screen in VIM while editing
+" set scrolloff to 8 so that we always have at least 8 lines between cursor
+" and end of screen in VIM while editing
 set scrolloff=8
 
 " Add a bit extra margin to the left
 set foldcolumn=1
 
 " Make sure that we have a text guide for typing at only 80 chars MAX...
-"set textwidth=78
 set colorcolumn=80
 
-" Turn backup off, since most stuff is in SVN, git ,etc.. anyway...  set nobackup
+" Turn backup off. We use GIT for that!
 set nowb
 set noswapfile
 
@@ -37,8 +36,9 @@ set nospell spelllang=en_us
 " vi compatibility is lame... hahaha
 set nocompatible
 
-" lets hide the mode as we are using lightline for this :)
+" lets hide the mode and ruler as we are using a plugin for this
 set noshowmode
+set noruler
 
 " This is to fix lightline
 set laststatus=2
@@ -49,9 +49,6 @@ set laststatus=2
 set relativenumber
 set number
 
-" Turn on the ruler so that we can always see the cursor position
-set ruler
-
 " Show the cursor's current line highlight
 set cursorline
 
@@ -61,6 +58,7 @@ set showcmd
 set cmdheight=1
 
 " turn on the wildmenu cause we love being wild
+" And this is usefull for seing the command completion when using it
 set wildmenu
 set wildmode=full
 
@@ -68,10 +66,9 @@ set wildmode=full
 " the more common VCS that i use in my projects
 set wildignore=*.o,*~,*.pyc,.git\*,.hg\*,.svn\*,vendor\*,public\vendor\*,bower_components\*,node_modules\*,platforms\*
 
-" Ignore case when searching
+" Ignore case when searching all small letters
+" but respect case when you have a capped letter in the search
 set ignorecase
-
-" When searching try to be smart about cases
 set smartcase
 
 " Disable mouse cause only noobs use it.
@@ -84,7 +81,7 @@ else
 	set clipboard=
 endif
 
-" Set encoded character set
+" Set encoded character set to utf-8 so we can read and write unicode text
 set encoding=utf-8
 
 " Use Unix as the standard file type
@@ -152,82 +149,18 @@ vno <up>    :m'<-2<CR>`>my`<mzgv`yo`z
 " Turn off Ex-Mode permanently
 no Q <nop>
 
-" Visual mode pressing * or # searches for the current selection
-" Super useful! From an idea by Michael Naumann
-vno <silent> * :call VisualSelection('f', '')<CR>
-vno <silent> # :call VisualSelection('b', '')<CR>
-
 " Smart way to move between windows
 no <C-j> <C-W>j
 no <C-k> <C-W>k
 no <C-h> <C-W>h
 no <C-l> <C-W>l
 
-" Quick command to remove all GIT conflicts from merged branch
-no <leader>g :%s/\([=]\{7\}\)\(\_.\{-\}[>]\{7\}.*\n\)//g<CR>:%s/\([<]\{7\}.*\n\)//g<CR>
-
-" Quick command to remove all GIT conflicts from merged branch
-no <leader>G :%s/\([<]\{7\} HEAD\)\(\_.\{-\}[=]\{7\}\n\)//g<CR>:%s/\([>]\{7\}.*\n\)//g<CR>
-
-" Map Convert PRE php 5.4 array syntax to new 5.4+ syntax...
-no <leader>as :call PHPShortHandArrayConverter()<CR>
+" Insert the current file's name!
+no <leader>f a<C-R>=expand("%:t:r")<CR><ESC>
 
 " Insert the current file's name!
-no <leader>fn a<C-R>=expand("%:t:r")<CR><ESC>
-
-" Insert the current file's name!
-vno <leader>fn s<C-R>=expand("%:t:r")<CR><ESC>
+vno <leader>f s<C-R>=expand("%:t:r")<CR><ESC>
 
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
-
-" FUNCTION to Convert PRE php 5.4 array syntax to new 5.4+ syntax...
-function! PHPShortHandArrayConverter() range
-	" Replace empty arrays first
-	execute "normal :%s/[aA]rray\\(\\s\\+\\)\\?(\\(\\s\\+\\)\\?)/[]/ge\<CR>"
-
-	" We need a place to store the count...
-	" Count the number of matches
-	let l:count=[0] | %s/[aA]rray\(\s\+\)\?(\zs/\=map(l:count,'v:val+1')[1:]/ge
-
-	" Check if we have more than 1
-	while l:count[0] > 0
-		" Find the instances
-		execute "normal gg/[aA]rray\\(\\s\\+\\)\\?(\<CR>"
-
-		" Remove the array word
-		execute "normal dwa\<CR>"
-
-		" raplace ( with [
-		execute "normal cs(]"
-
-		" We need a place to store the count...
-		" Count the number of matches
-		let l:count=[0] | %s/[aA]rray\(\s\+\)\?(\zs/\=map(l:count,'v:val+1')[1:]/ge
-	endwhile
-endfunction
-
-" FUNCTION FOR VISUAL SECTION SEARCHING
-function! VisualSelection(direction, extra_filter) range
-	let l:saved_reg = @"
-	execute "normal! vgvy"
-
-	let l:pattern = escape(@", '\\/.*$^~[]')
-	let l:pattern = substitute(l:pattern, "\n$", "", "")
-
-	if a:direction == 'b'
-		execute "normal ?" . l:pattern . "^M"
-	elseif a:direction == 'gv'
-		call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.' . a:extra_filter)
-	elseif a:direction == 'replace'
-		call CmdLine("%s" . '/'. l:pattern . '/')
-	elseif a:direction == 'f'
-		execute "normal /" . l:pattern . "^M"
-	endif
-
-	let @/ = l:pattern
-	let @" = l:saved_reg
-endfunction
-
-" END OF FILE
