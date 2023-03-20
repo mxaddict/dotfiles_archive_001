@@ -1,7 +1,0 @@
-session_name: music
-windows:
-- window_name: cmustrix
-  panes:
-    - shell_command:
-      - cmus
-      focus: true
