@@ -21,7 +21,7 @@ Installation
 ```shell
 # Install requirements START
 ## FOR Ubuntu/Debian
-sudo apt install neovim xclip curl git cmake build-essential python-dev tmux tmuxp clang silversearcher-ag -y
+sudo apt install neovim xclip curl git cmake build-essential python3-dev tmux clang ripgrep -y
 # Install requirements END
 
 # seriously, that's it! and follow the prompts!
