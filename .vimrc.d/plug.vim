@@ -74,7 +74,8 @@ Plug 'mg979/vim-visual-multi'
 Plug 'junegunn/vim-easy-align'
 
 " Add icons for some plugins that support it
-Plug 'ryanoasis/vim-devicons'
+" TODO: Check if this is working at a later time
+"Plug 'ryanoasis/vim-devicons'
 
 " Let vim plug know we are done
 call plug#end()
