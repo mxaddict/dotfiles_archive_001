@@ -159,12 +159,6 @@ no <C-k> <C-W>k
 no <C-h> <C-W>h
 no <C-l> <C-W>l
 
-" Insert the current file's name!
-no <leader>f a<C-R>=expand("%:t:r")<CR><ESC>
-
-" Insert the current file's name!
-vno <leader>f s<C-R>=expand("%:t:r")<CR><ESC>
-
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
