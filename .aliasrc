@@ -4,13 +4,6 @@ alias :q=exit
 alias :qa=exit
 alias :wq=exit
 
-# Some quick Aliases for IRC related things
-alias irc='irssi'
-alias irctor='torsocks irssi'
-alias irc_gents='torsocks irssi -c fsociety7xkhgt6i.onion -p 6697'
-alias irc_undernet='irssi -c undernet'
-alias irc_freenode='irssi -c freenode'
-
 # Aliases to enable color support for these
 alias ls='ls --color=auto'
 alias dir='dir --color=auto'
@@ -31,47 +24,6 @@ alias vi=vim
 
 # Alias make to use max cores/threads
 alias make='make -j $(nproc)'
-
-# I need some aliases for tmuxp
-alias tp='tmuxp'
-alias tpl='tp load'
-alias ide='tpl .tmuxp.yml'
-
-# Add some GIT aliases for fixing typos
-alias fat='echo "Hey there fat fingers!!!\n" && git'
-alias got='fat'
-alias gto='fat'
-alias gti='fat'
-alias igit='fat'
-
-# Add alias for typo of mkdir
-alias mkdit='mkdir'
-
-alias exodus='/opt/Exodus/Exodus'
-
-# Create alias for switching exodus wallets
-alias exodus_deeney='export ACCOUNT=deeney         && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts/$ACCOUNT     ~/.config/Exodus/exodus.wallet && exodus'
-alias exodus_helena='export ACCOUNT=helena         && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts/$ACCOUNT     ~/.config/Exodus/exodus.wallet && exodus'
-alias exodus_house='export ACCOUNT=house           && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts/$ACCOUNT     ~/.config/Exodus/exodus.wallet && exodus'
-alias exodus_kids='export ACCOUNT=kids             && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts/$ACCOUNT     ~/.config/Exodus/exodus.wallet && exodus'
-alias exodus_maarnie='export ACCOUNT=maarnie       && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts/$ACCOUNT     ~/.config/Exodus/exodus.wallet && exodus'
-alias exodus_mariejoy='export ACCOUNT=mariejoy     && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts/$ACCOUNT     ~/.config/Exodus/exodus.wallet && exodus'
-alias exodus_motor='export ACCOUNT=motor           && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts/$ACCOUNT     ~/.config/Exodus/exodus.wallet && exodus'
-alias exodus_mxaddict='export ACCOUNT=mxaddict     && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts/$ACCOUNT     ~/.config/Exodus/exodus.wallet && exodus'
-alias exodus_savings='export ACCOUNT=savings       && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts/$ACCOUNT     ~/.config/Exodus/exodus.wallet && exodus'
-
-alias old_exodus_deeney='export ACCOUNT=deeney     && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts.old/$ACCOUNT ~/.config/Exodus/exodus.wallet && exodus'
-alias old_exodus_helena='export ACCOUNT=helena     && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts.old/$ACCOUNT ~/.config/Exodus/exodus.wallet && exodus'
-alias old_exodus_house='export ACCOUNT=house       && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts.old/$ACCOUNT ~/.config/Exodus/exodus.wallet && exodus'
-alias old_exodus_kids='export ACCOUNT=kids         && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts.old/$ACCOUNT ~/.config/Exodus/exodus.wallet && exodus'
-alias old_exodus_maarnie='export ACCOUNT=maarnie   && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts.old/$ACCOUNT ~/.config/Exodus/exodus.wallet && exodus'
-alias old_exodus_motor='export ACCOUNT=motor       && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts.old/$ACCOUNT ~/.config/Exodus/exodus.wallet && exodus'
-alias old_exodus_mxaddict='export ACCOUNT=mxaddict && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts.old/$ACCOUNT ~/.config/Exodus/exodus.wallet && exodus'
-alias old_exodus_savings='export ACCOUNT=savings   && rm ~/.config/Exodus/exodus.wallet; ln -s ~/.config/Exodus/accounts.old/$ACCOUNT ~/.config/Exodus/exodus.wallet && exodus'
-
-# NAVCOIN Helper commands
-alias nav='navcoin-cli'
-alias nstake='nav getstakereport && nav getstakinginfo && nav getwalletinfo'
 
 # Check if we have an debian based system
 if [ $(command -v apt-get) ]
