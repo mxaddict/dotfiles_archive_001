@@ -79,12 +79,8 @@ set smartcase
 " Disable mouse cause only noobs use it.
 set mouse=
 
-" Enable system clipboard IF TMUX is not used
-if $TMUX == ''
-	set clipboard+=unnamed
-else
-	set clipboard=
-endif
+" Enable the clipboard
+set clipboard+=unnamed
 
 " Set encoded character set to utf-8 so we can read and write unicode text
 set encoding=utf-8

@@ -50,6 +50,9 @@ Plug 'tpope/vim-sensible'
 " This will allow us to wrap text easily with matching tags/brackets
 Plug 'tpope/vim-surround'
 
+" We need this for some git support
+Plug 'tpope/vim-fugitive'
+
 " This makes our vim have a clear background
 Plug 'miyakogi/seiya.vim'
 
