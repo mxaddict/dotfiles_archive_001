@@ -1,8 +1,3 @@
-" Use 256 colors
-if !has('gui_running')
-  set t_Co=256
-endif
-
 " Access colors present in 256 colorspace
 let base16colorspace=256
 
@@ -27,6 +22,12 @@ set colorcolumn=80
 set nowb
 set noswapfile
 
+" Updated backspacing and del behavior to allow sane usage
+set backspace=indent,eol,start
+
+" Disable octal increments
+set nrformats-=octal
+
 " turn on bracket matching/highlighting
 set showmatch
 
@@ -42,6 +43,10 @@ set noruler
 
 " This is to fix lightline
 set laststatus=2
+
+" Make scrolling left or right on long lines less janky
+set sidescroll=1
+set sidescrolloff=4
 
 " We need line numbers right? :)
 " BUT WAIT, THERE'S MORE! Line numbers that make SENSE for NORMAL MODE and
@@ -109,7 +114,10 @@ set t_vb=
 set tm=500
 
 " Set some whitespace characters
-set list listchars=tab:\›\ ,trail:-,extends:>,precedes:<,eol:¬
+set list listchars=tab:→\ ,space:\ ,nbsp:␣,trail:•,eol:¬,precedes:«,extends:»
+
+" Delete comment character when joining commented lines
+set formatoptions+=j
 
 " Set tab settings to 4 spaces and no expand tab
 set smarttab

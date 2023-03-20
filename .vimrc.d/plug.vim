@@ -2,64 +2,72 @@
 call plug#begin('~/.vim/plugged')
 
 " Deoplete!!!
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'Shougo/deoplete-clangx'
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'Shougo/deoplete-clangx'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-
-" My Bundles here:
-Plug '2072/PHP-Indenting-for-VIm'
-Plug 'SirVer/ultisnips'
-Plug 'StanAngeloff/php.vim'
-Plug 'alvan/vim-closetag'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'edkolev/promptline.vim'
-Plug 'edkolev/tmuxline.vim'
-Plug 'elzr/vim-json'
-Plug 'evidens/vim-twig'
-Plug 'gabesoft/vim-ags'
-Plug 'gregsexton/gitv'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'honza/vim-snippets'
-Plug 'itchyny/lightline.vim'
-Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-easy-align'
-Plug 'kchmck/vim-coffee-script'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'leafgarland/typescript-vim'
-Plug 'mattn/emmet-vim'
-Plug 'maximbaz/lightline-ale'
-Plug 'mhinz/vim-signify'
-Plug 'miyakogi/seiya.vim'
-Plug 'mxw/vim-jsx'
-Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'pangloss/vim-javascript'
-Plug 'plasticboy/vim-markdown'
-Plug 'scrooloose/nerdtree'
-Plug 'skatzteyp/vim-ultisnips-angular2'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'tikhomirov/vim-glsl'
-Plug 'tobyS/pdv'
-Plug 'tobyS/vmustache'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-haml'
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-surround'
-Plug 'vim-scripts/matchit.zip'
-Plug 'w0rp/ale'
-Plug 'xsbeats/vim-blade'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete-clangx'
 
 " Themes
 Plug 'chriskempson/base16-vim'
+
+" Make sure we have editorconfig support
+Plug 'editorconfig/editorconfig-vim'
+
+" Fzf for fuzzy searching files and text in files
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+" NERDTree cause why not? Good for looking at project structure
+Plug 'scrooloose/nerdtree'
+
+" Snip support
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
+" ({["' HTML/XML auto close tags
+Plug 'jiangmiao/auto-pairs'
+Plug 'alvan/vim-closetag'
+
+" It's like auto close tags but for ruby and other languages that have if
+" endif syntax that don't have actual tags
+Plug 'tpope/vim-endwise'
+
+" Cool looking shell promptline
+Plug 'edkolev/promptline.vim'
+
+" Ale (This is for file linting)
+Plug 'dense-analysis/ale'
+
+" Cool looking status line for vim and tmux
+Plug 'itchyny/lightline.vim'
+Plug 'edkolev/tmuxline.vim'
+Plug 'maximbaz/lightline-ale'
+
+" This plugin is for gcc ad gc commands for multiline commenting
+Plug 'tpope/vim-commentary'
+
+" Load some sensable defaults for vim
+Plug 'tpope/vim-sensible'
+
+" This will allow us to wrap text easily with matching tags/brackets
+Plug 'tpope/vim-surround'
+
+" This makes our vim have a clear background
+Plug 'miyakogi/seiya.vim'
+
+" Provides support for expanding abbreviations similar to emmet for html/xml
+" tags like body>ul>li syntax
+Plug 'mattn/emmet-vim'
+
+" This plugin shows a diff for code changes via git
+Plug 'mhinz/vim-signify'
+
+" Syntax related plugins
+"Plug 'octol/vim-cpp-enhanced-highlight' # C++ files
+
+" TODO: find a better plugin for multi cursor
+Plug 'terryma/vim-multiple-cursors'
+
+" TODO: check if we still use easy align
+Plug 'junegunn/vim-easy-align'
 
 " Let vim plug know we are done
 call plug#end()
