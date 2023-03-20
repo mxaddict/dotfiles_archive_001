@@ -63,10 +63,11 @@ Plug 'mhinz/vim-signify'
 " Syntax related plugins
 Plug 'octol/vim-cpp-enhanced-highlight'
 
-" TODO: find a better plugin for multi cursor
-Plug 'terryma/vim-multiple-cursors'
+" Allows for multi cursor edits
+Plug 'mg979/vim-visual-multi'
 
-" TODO: check if we still use easy align
+" Allows us to align text via characters like = or spaces and tabbing
+" use via ga= for example
 Plug 'junegunn/vim-easy-align'
 
 " Let vim plug know we are done
