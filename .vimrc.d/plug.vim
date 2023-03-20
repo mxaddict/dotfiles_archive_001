@@ -61,7 +61,7 @@ Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-signify'
 
 " Syntax related plugins
-"Plug 'octol/vim-cpp-enhanced-highlight' # C++ files
+Plug 'octol/vim-cpp-enhanced-highlight'
 
 " TODO: find a better plugin for multi cursor
 Plug 'terryma/vim-multiple-cursors'
