@@ -174,6 +174,7 @@ function! VisualYank()
 		let pattern = @l
 		let pattern = escape(pattern, '\\/.*$^~[]')
 		let pattern = substitute(pattern, "\n$", "", "")
+		let @k = @l
 		let @l = pattern
 		return @l
 	endtry

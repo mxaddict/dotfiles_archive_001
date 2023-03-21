@@ -2,6 +2,9 @@
 # Set default editor to vim
 export EDITOR="vim"
 
+# Setup our default FZF command
+export FZF_DEFAULT_COMMAND="rg --files --hidden -g '!.git'"
+
 # Load our path exports
 [ -f ~/.pathrc ] && source ~/.pathrc
 
