@@ -18,6 +18,12 @@ Plug 'junegunn/fzf.vim'
 " NERDTree cause why not? Good for looking at project structure
 Plug 'scrooloose/nerdtree'
 
+" Add nerdtree syntax support
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+" Add git support to nerdtree
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
 " Snip support
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
