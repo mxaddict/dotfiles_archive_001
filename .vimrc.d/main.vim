@@ -170,10 +170,12 @@ command W w !sudo tee % > /dev/null
 " FUNCTION FOR VISUAL YANK
 function! VisualYank()
 	try
-		normal! vgvy"
-		@" = escape(@", '\\/.*$^~[]')
-		@" = substitute(@", "\n$", "", "")
-		return @"
+		normal! gv"ly
+		let pattern = @l
+		let pattern = escape(pattern, '\\/.*$^~[]')
+		let pattern = substitute(pattern, "\n$", "", "")
+		let @l = pattern
+		return @l
 	endtry
 	return ''
 endfunction
