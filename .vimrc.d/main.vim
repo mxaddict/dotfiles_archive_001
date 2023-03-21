@@ -100,6 +100,10 @@ set incsearch
 " Don't redraw while executing macros (good performance config)
 set lazyredraw
 
+" Use ripgrep for faster searching
+set grepprg=rg\ --vimgrep
+set grepformat^=%f:%l:%c:%m
+
 " For regular expressions turn magic on
 set magic
 
@@ -166,11 +170,9 @@ command W w !sudo tee % > /dev/null
 " FUNCTION FOR VISUAL YANK
 function! VisualYank()
 	try
-		let a_save = @a
-		normal! gv"ay
-		return @a
-	finally
-		let @a = a_save
+		let l_save = @l
+		normal! gv"ly
+		return @l
 	endtry
-	return @a
+	return ''
 endfunction
