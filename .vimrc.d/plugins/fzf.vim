@@ -7,5 +7,5 @@ no <silent> R :Rg<CR>
 " Setup the fzf visual mode shortcuts
 vno <silent> f <Esc>:FZF -q <C-R>=VisualYank()<CR> .<CR>
 vno <silent> F <Esc>:GFiles<CR>
-vno <silent> r <Esc>/<C-R>=VisualYank()<CR><CR>:grep <C-R>=@l<CR><CR> .* .<CR>:cw<CR>
+vno <silent> r <Esc>/<C-R>=VisualYank()<CR><CR>:grep <C-R>=@l<CR> .* .<CR><CR>:cw<CR>
 vno <silent> R <Esc>:Rg<CR>
