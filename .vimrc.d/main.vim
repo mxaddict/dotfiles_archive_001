@@ -101,7 +101,7 @@ set incsearch
 set lazyredraw
 
 " Use ripgrep for faster searching
-set grepprg=rg\ --vimgrep
+set grepprg=rg\ --vimgrep\ --smart-case\ --hidden\ -g\ '!.git'\ --fixed-strings\ --
 set grepformat^=%f:%l:%c:%m
 
 " For regular expressions turn magic on
@@ -166,17 +166,3 @@ no <C-l> <C-W>l
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
-
-" FUNCTION FOR VISUAL YANK
-function! VisualYank()
-	try
-		normal! gv"ly
-		let pattern = @l
-		let pattern = escape(pattern, '\\/.*$^~[]')
-		let pattern = substitute(pattern, "\n$", "", "")
-		let @k = @l
-		let @l = pattern
-		return @l
-	endtry
-	return ''
-endfunction
