@@ -88,3 +88,10 @@ then
 	export GOPATH=$HOME/Projects/go
 	export PATH=$PATH:$GOPATH/bin
 fi
+
+# Check if we have cargo
+if [ -d "${HOME}/.cargo/bin" ]
+then
+	# add ${HOME}/.cargo/bin to the path
+	export PATH=$PATH":${HOME}/.cargo/bin"
+fi
