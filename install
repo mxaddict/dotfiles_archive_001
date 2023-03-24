@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Set GIT to use colors
 git config --global color.ui auto
@@ -49,7 +49,7 @@ then
 	# Now clone the repo...
 	git clone https://github.com/mxaddict/dotfiles.git $DOTFILES_DIR
 else
-	cd $DOTFILES_DIR && git fetch && git checkout origin/master
+	cd $DOTFILES_DIR && git checkout master && git pull
 fi
 
 # Check if we already have a copy of base16-shell
@@ -58,7 +58,7 @@ then
 	# Now clone the repo...
 	git clone https://github.com/chriskempson/base16-shell.git $BASE16_DIR
 else
-	cd $BASE16_DIR && git fetch && git checkout origin/master
+	cd $BASE16_DIR && git checkout master && git pull
 fi
 
 # Check if we have  ~/.vimrc.d
