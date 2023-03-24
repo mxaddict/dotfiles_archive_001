@@ -29,6 +29,9 @@ if [ "$GIT_EMAIL_NEW" != "" ]; then
 	git config --global user.email "$GIT_EMAIL_NEW"
 fi
 
+# Add our global gitignore
+git config --global core.excludesfile ~/.gitignore_global
+
 # Where is the DIR for dotfiles?
 DOTFILES_DIR="${HOME}/.files"
 
@@ -100,15 +103,16 @@ if [ "$UPDATE_PLUGINS" == "Y" ] || [ "$UPDATE_PLUGINS" == "y" ] || [ "$UPDATE_PL
 fi
 
 # Copy all our custom files!
-cat $DOTFILES_DIR/.aliasrc      > ~/.aliasrc
-cat $DOTFILES_DIR/.bash_profile > ~/.bash_profile
-cat $DOTFILES_DIR/.bashrc       > ~/.bashrc
-cat $DOTFILES_DIR/.pathrc       > ~/.pathrc
-cat $DOTFILES_DIR/.shrc         > ~/.shrc
-cat $DOTFILES_DIR/.tmux.conf    > ~/.tmux.conf
-cat $DOTFILES_DIR/.vimrc        > ~/.vimrc
-cat $DOTFILES_DIR/.zsh_profile  > ~/.zsh_profile
-cat $DOTFILES_DIR/.zshrc        > ~/.zshrc
+cat $DOTFILES_DIR/.aliasrc          > ~/.aliasrc
+cat $DOTFILES_DIR/.bash_profile     > ~/.bash_profile
+cat $DOTFILES_DIR/.bashrc           > ~/.bashrc
+cat $DOTFILES_DIR/.pathrc           > ~/.pathrc
+cat $DOTFILES_DIR/.shrc             > ~/.shrc
+cat $DOTFILES_DIR/.tmux.conf        > ~/.tmux.conf
+cat $DOTFILES_DIR/.vimrc            > ~/.vimrc
+cat $DOTFILES_DIR/.zsh_profile      > ~/.zsh_profile
+cat $DOTFILES_DIR/.zshrc            > ~/.zshrc
+cat $DOTFILES_DIR/.gitignore_global > ~/.gitignore_global
 
 # Check if we have promptline setup already
 if [ -d ~/.vim/plugged/promptline.vim ]; then
