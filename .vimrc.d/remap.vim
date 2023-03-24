@@ -66,5 +66,6 @@ no <c-down>  :resize +2<cr>
 no <c-left>  :vertical resize -2<cr>
 no <c-right> :vertical resize +2<cr>
 
-" Add execute bit to current file
-no <leader>x :!chmod +x %<cr>
+" Add/Remove execute bit to current file
+no <leader>x :!chmod +x %<cr><cr>
+no <leader>z :!chmod -x %<cr><cr>
