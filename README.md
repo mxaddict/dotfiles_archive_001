@@ -20,7 +20,7 @@ Installation
 ```shell
 # Install requirements START
 ## FOR Ubuntu/Debian
-sudo apt install neovim xclip curl git cmake build-essential python3-dev tmux clang ripgrep cargo -y
+sudo apt install neovim xclip curl git cmake build-essential python3-dev tmux clang clangd ripgrep cargo -y
 cargo install devicon-lookup
 # Install requirements END
 
