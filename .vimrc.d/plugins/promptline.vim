@@ -4,7 +4,7 @@ let g:promptline_theme = 'lightline_insert'
 " We don't need much
 let g:promptline_preset = {
 	\'a':    [ promptline#slices#user() ],
-	\'b':    [ promptline#slices#cwd() ],
+	\'b':    [ '${PWD/#$HOME/~}' ],
 	\'y':    [ promptline#slices#git_status() ],
 	\'z':    [ promptline#slices#vcs_branch() ],
 	\'warn': [ promptline#slices#last_exit_code(), promptline#slices#jobs() ]
