@@ -20,14 +20,12 @@ printf "Update/Install Plugins? [Y/n]:"
 read UPDATE_PLUGINS
 
 # Save the GIT_NAME
-if [ "$GIT_NAME_NEW" != "" ]
-then
+if [ "$GIT_NAME_NEW" != "" ]; then
 	git config --global user.name "$GIT_NAME_NEW"
 fi
 
 # Save the GIT_EMAIL
-if [ "$GIT_EMAIL_NEW" != "" ]
-then
+if [ "$GIT_EMAIL_NEW" != "" ]; then
 	git config --global user.email "$GIT_EMAIL_NEW"
 fi
 
@@ -44,8 +42,7 @@ BASE16_DIR="${CONFIG_DIR}/base16-shell"
 mkdir -p ${CONFIG_DIR}
 
 # Check if we already have a copy of dotfiles
-if [ ! -d $DOTFILES_DIR ]
-then
+if [ ! -d $DOTFILES_DIR ]; then
 	# Now clone the repo...
 	git clone https://github.com/mxaddict/dotfiles.git $DOTFILES_DIR
 else
@@ -53,8 +50,7 @@ else
 fi
 
 # Check if we already have a copy of base16-shell
-if [ ! -d $BASE16_DIR ]
-then
+if [ ! -d $BASE16_DIR ]; then
 	# Now clone the repo...
 	git clone https://github.com/chriskempson/base16-shell.git $BASE16_DIR
 else
@@ -62,15 +58,13 @@ else
 fi
 
 # Check if we have  ~/.vimrc.d
-if [ -d ~/.vimrc.d ]
-then
+if [ -d ~/.vimrc.d ]; then
 	# Remove the OLD .vimrc.d/ DIR from home DIR
 	rm -r ~/.vimrc.d
 fi
 
 # Check if we have  ~/.vim/undo
-if [ -d ~/.vim/undo ]
-then
+if [ -d ~/.vim/undo ]; then
 	# Make the undo dir
 	mkdir -p ~/.vim/undo
 fi
@@ -79,8 +73,7 @@ fi
 cp -r $DOTFILES_DIR/.vimrc.d ~/
 
 # Check if our plugin manager is installed
-if [ ! -f ~/.vim/autoload/plug.vim ]
-then
+if [ ! -f ~/.vim/autoload/plug.vim ]; then
 	# Install our plugin manager
 	printf "Installing our plugin manager\n"
 	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -90,20 +83,17 @@ fi
 echo "source ~/.vimrc.d/plug.vim" > ~/.vimrc
 
 # Make some symlinks...
-if [ ! -h $CONFIG_DIR/nvim ]
-then
+if [ ! -h $CONFIG_DIR/nvim ]; then
 	ln -s ~/.vim $CONFIG_DIR/nvim
 fi
 
 # Make some symlinks...
-if [ ! -h $CONFIG_DIR/nvim/init.vim ]
-then
+if [ ! -h $CONFIG_DIR/nvim/init.vim ]; then
 	ln -s ~/.vimrc $CONFIG_DIR/nvim/init.vim
 fi
 
 # Check if we even want to install/update plugins
-if [ "$UPDATE_PLUGINS" == "Y" ] || [ "$UPDATE_PLUGINS" == "y" ] || [ "$UPDATE_PLUGINS" == "" ]
-then
+if [ "$UPDATE_PLUGINS" == "Y" ] || [ "$UPDATE_PLUGINS" == "y" ] || [ "$UPDATE_PLUGINS" == "" ]; then
 	# Install Vim Plugins
 	printf "Installing Vim Plugins, Will take a while depending on connection speed!\n"
 	vim +PlugUpgrade +PlugClean! +PlugUpdate +qall
@@ -121,15 +111,13 @@ cat $DOTFILES_DIR/.zsh_profile  > ~/.zsh_profile
 cat $DOTFILES_DIR/.zshrc        > ~/.zshrc
 
 # Check if we have promptline setup already
-if [ -d ~/.vim/plugged/promptline.vim ]
-then
+if [ -d ~/.vim/plugged/promptline.vim ]; then
 	# Setup Promptline!
 	vim +"PromptlineSnapshot! ~/.promptline.sh" +qall
 fi
 
 # Check if we have tmuxline setup already
-if [ -d ~/.vim/plugged/tmuxline.vim ]
-then
+if [ -d ~/.vim/plugged/tmuxline.vim ]; then
 	# Setup Promptline!
 	vim +Tmuxline +"TmuxlineSnapshot! ~/.tmuxline.conf" +qall
 fi
