@@ -82,5 +82,8 @@ Plug 'junegunn/vim-easy-align'
 " Add icons for some plugins that support it
 Plug 'ryanoasis/vim-devicons'
 
+" Add startify start up screen for vim
+Plug 'mhinz/vim-startify'
+
 " Let vim plug know we are done
 call plug#end()
