@@ -22,6 +22,7 @@ Installation
 ## FOR Ubuntu/Debian
 sudo apt install neovim xclip curl git cmake build-essential python3-dev python3-pip tmux clang clangd ripgrep cargo -y
 cargo install devicon-lookup
+sudo pip3 install neovim
 # Install requirements END
 
 # seriously, that's it! and follow the prompts!
