@@ -1,9 +1,8 @@
 " Load up vim plug
 call plug#begin('~/.vim/plugged')
 
-" Deoplete!!!
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/deoplete-clangx'
+" coc.vim
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " Themes
 Plug 'chriskempson/base16-vim'
