@@ -50,11 +50,9 @@ endfunction
 
 function! MyBranch()
 	try
-		if expand('%:t') !~? 'Tagbar\|NERD' && exists('FugitiveHead')
-			let mark = ' '
-			let _ = FugitiveHead()
-			return strlen(_) ? mark._ : ''
-		endif
+		let mark = ' '
+		let _ = FugitiveHead()
+		return strlen(_) ? mark._ : ''
 	catch
 	endtry
 	return ''
