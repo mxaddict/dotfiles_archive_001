@@ -22,6 +22,16 @@ set colorcolumn=80
 set nowb
 set noswapfile
 
+" Let's save undo info!
+if !isdirectory($HOME."/.vim")
+	call mkdir($HOME."/.vim", "", 0770)
+endif
+if !isdirectory($HOME."/.vim/undo")
+	call mkdir($HOME."/.vim/undo", "", 0700)
+endif
+set undodir=~/.vim/undo
+set undofile
+
 " Updated backspacing and del behavior to allow sane usage
 set backspace=indent,eol,start
 
