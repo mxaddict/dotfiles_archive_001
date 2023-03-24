@@ -19,16 +19,10 @@ set foldcolumn=1
 set colorcolumn=80
 
 " Turn backup off. We use GIT for that!
-set nowb
+set nobackup
 set noswapfile
 
 " Let's save undo info!
-if !isdirectory($HOME."/.vim")
-	call mkdir($HOME."/.vim", "", 0770)
-endif
-if !isdirectory($HOME."/.vim/undo")
-	call mkdir($HOME."/.vim/undo", "", 0700)
-endif
 set undodir=~/.vim/undo
 set undofile
 
@@ -44,7 +38,7 @@ set showmatch
 " set spelling language, but don't enable it by default cause it's annoying
 set nospell spelllang=en_us
 
-" vi compatibility is lame... hahaha
+" Disable vi backwards compatibility
 set nocompatible
 
 " lets hide the mode and ruler as we are using a plugin for this
@@ -58,9 +52,7 @@ set laststatus=2
 set sidescroll=1
 set sidescrolloff=4
 
-" We need line numbers right? :)
-" BUT WAIT, THERE'S MORE! Line numbers that make SENSE for NORMAL MODE and
-" INSERT MODE? YEAH, WE GOTZ THIZZ SHIZZZ>>>>>
+" We need line numbers right?
 set relativenumber
 set number
 
@@ -145,34 +137,15 @@ syntax on
 filetype plugin on
 filetype indent on
 
-" Magic code transformation
-no  <F3> ggVGg?
-ino <F3> ggVGg?
-vno <F3> ggVGg?
+" Auto save after insert if file has changed
+autocmd InsertLeave * update
 
-" Disable arrow keys and use UP and DOWN for code movement
-no  <down>  mz:m+<CR>`z
-no  <left>  <Nop>
-no  <right> <Nop>
-no  <up>    mz:m-2<CR>`z
-ino <down>  <Esc><Esc>mz:m+<CR>`z
-ino <left>  <Nop>
-ino <right> <Nop>
-ino <up>    <Esc><Esc>mz:m-2<CR>`z
-vno <down>  :m'>+<CR>`<my`>mzgv`yo`z
-vno <left>  <Nop>
-vno <right> <Nop>
-vno <up>    :m'<-2<CR>`>my`<mzgv`yo`z
-
-" Turn off Ex-Mode permanently
-no Q <nop>
-
-" Smart way to move between windows
-no <C-j> <C-W>j
-no <C-k> <C-W>k
-no <C-h> <C-W>h
-no <C-l> <C-W>l
+" Auto read/write for buffers
+" this will read the changes from disk (IE git updated the file)
+" this will write changes when switching buffers, etc..
+set autoread
+set autowriteall
 
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
-command W w !sudo tee % > /dev/null
+command W write !sudo tee % > /dev/null

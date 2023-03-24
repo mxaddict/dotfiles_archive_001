@@ -5,22 +5,6 @@ autocmd  FileType fzf set nonumber norelativenumber
 " Set our fzf window to be at the bottom with 30% height
 let g:fzf_layout = { "down": "30%" }
 
-function! s:visual_yank()
-	try
-		normal! gv"ly
-		return @l
-	endtry
-	return ''
-endfunction
-
-function! s:escape_slash(text)
-	return substitute(escape(a:text, "\\/.*$^~[]"), "\n$", "", "")
-endfunction
-
-function! s:escape_bang(text)
-	return substitute(escape(a:text, "|"), '\\!', "!", "")
-endfunction
-
 function! s:edit_file(file)
 	" Remove the icon
 	let full = get(split(a:file, " "), 1, "")
@@ -88,13 +72,13 @@ command! -nargs=* FindInFiles  call FindFiles("grep", <q-args>)
 command! -nargs=* FindGitFiles call FindFiles("git",  <q-args>)
 
 " Setup the fzf normal mode shortcuts
-no <silent> f :FindFiles<CR>
-no <silent> F :FindGitFiles<CR>
-no <silent> r /<C-R>=expand("<cword>")<CR><CR>:grep <C-R>=expand("<cword>")<CR><CR><CR>:cw<CR>
-no <silent> R :FindInFiles<CR>
+no <silent> f :FindFiles<cr>
+no <silent> F :FindGitFiles<cr>
+no <silent> r /<c-r>=expand("<cword>")<cr><cr>:grep <c-r>=expand("<cword>")<cr><cr><cr>:cw<cr>
+no <silent> R :FindInFiles<cr>
 
 " Setup the fzf visual mode shortcuts
-vno <silent> f <Esc>:FindFiles <C-R>=<SID>visual_yank()<CR><CR>
-vno <silent> F <Esc>:FindGitFiles <C-R>=<SID>visual_yank()<CR><CR>
-vno <silent> r <Esc>/<C-R>=<SID>escape_slash(<SID>visual_yank())<CR><CR>:grep <C-R>=<SID>escape_bang(shellescape(@l, 1))<CR><CR><CR>:cw<CR>
-vno <silent> R <Esc>:FindInFiles <C-R>=<SID>visual_yank()<CR><CR>
+vno <silent> f <esc>:FindFiles <c-r>=VisualYank()<cr><cr>
+vno <silent> F <esc>:FindGitFiles <c-r>=VisualYank()<cr><cr>
+vno <silent> r <esc>/<c-r>=EscapeSlash(VisualYank())<cr><cr>:grep <c-r>=EscapeBang(shellescape(@l, 1))<cr><cr><cr>:cw<cr>
+vno <silent> R <esc>:FindInFiles <c-r>=VisualYank()<cr><cr>

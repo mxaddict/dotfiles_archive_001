@@ -68,6 +68,13 @@ then
 	rm -r ~/.vimrc.d
 fi
 
+# Check if we have  ~/.vim/undo
+if [ -d ~/.vim/undo ]
+then
+	# Make the undo dir
+	mkdir -p ~/.vim/undo
+fi
+
 # Copy the .vimrc.d/ DIR to home DIR
 cp -r $DOTFILES_DIR/.vimrc.d ~/
 
