@@ -154,7 +154,3 @@ autocmd InsertLeave * update
 " this will write changes when switching buffers, etc..
 set autoread
 set autowriteall
-
-" :W sudo saves the file
-" (useful for handling the permission-denied error)
-command W write !sudo tee % > /dev/null
