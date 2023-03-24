@@ -38,13 +38,10 @@ Plug 'tpope/vim-endwise'
 " Cool looking shell promptline
 Plug 'edkolev/promptline.vim'
 
-" Ale (This is for file linting)
-Plug 'dense-analysis/ale'
-
 " Cool looking status line for vim and tmux
 Plug 'itchyny/lightline.vim'
 Plug 'edkolev/tmuxline.vim'
-Plug 'maximbaz/lightline-ale'
+Plug 'josa42/vim-lightline-coc'
 
 " This plugin is for gcc ad gc commands for multiline commenting
 Plug 'tpope/vim-commentary'

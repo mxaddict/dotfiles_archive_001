@@ -1,7 +1,7 @@
 let g:lightline = {
 			\ 'active': {
 			\   'left': [ [ 'mode', 'paste' ], [ 'branch', 'filename' ] ],
-			\   'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok', 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
+			\   'right': [ [ 'coc_info', 'coc_hints', 'coc_errors', 'coc_warnings', 'coc_ok', 'coc_status', 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
 			\ },
 			\ 'component_function': {
 			\   'branch': 'MyBranch',
@@ -11,25 +11,10 @@ let g:lightline = {
 			\   'fileencoding': 'MyFileencoding',
 			\   'mode': 'MyMode',
 			\ },
-			\ 'component_expand': {
-			\   'linter_checking': 'lightline#ale#checking',
-			\   'linter_warnings': 'lightline#ale#warnings',
-			\   'linter_errors': 'lightline#ale#errors',
-			\   'linter_ok': 'lightline#ale#ok',
-			\ },
-			\ 'component_type': {
-			\   'linter_checking': 'left',
-			\   'linter_warnings': 'warning',
-			\   'linter_errors': 'error',
-			\   'linter_ok': 'left',
-			\ },
 			\ 'subseparator': { 'left': '|', 'right': '|' }
 			\ }
 
-let g:lightline#ale#indicator_checking = "\uf110"
-let g:lightline#ale#indicator_warnings = "\uf071"
-let g:lightline#ale#indicator_errors = "\uf05e"
-let g:lightline#ale#indicator_ok = "\uf00c"
+call lightline#coc#register()
 
 function! MyModified()
 	return &ft =~ 'help' ? '' : &modified ? '+' : &modifiable ? '' : '-'
