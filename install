@@ -30,7 +30,7 @@ if [ "$GIT_EMAIL_NEW" != "" ]; then
 fi
 
 # Where is the DIR for dotfiles?
-DOTFILES_DIR="${HOME}/.dotfiles"
+DOTFILES_DIR="${HOME}/.files"
 
 # Where do we have the CONFIG_DIR?
 CONFIG_DIR="${HOME}/.config"
