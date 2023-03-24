@@ -20,7 +20,12 @@ set colorcolumn=80
 
 " Turn backup off. We use GIT for that!
 set nobackup
+set nowritebackup
 set noswapfile
+
+" Make sure we always have the sign column so we don't jitter when changing
+" values that show on it (Like for git changes and for errors in linter)
+set signcolumn=yes
 
 " Let's save undo info!
 set undodir=~/.vim/undo
