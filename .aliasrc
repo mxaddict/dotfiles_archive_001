@@ -1,8 +1,11 @@
 #!/bin/sh
 # QUIT the TERMINAL VIM style!
-alias :q=exit
-alias :qa=exit
-alias :wq=exit
+alias q=exit
+alias qa=q
+alias wq=q
+alias :q=q
+alias :qa=q
+alias :wq=q
 
 # Aliases to enable color support for these
 alias ls='ls --color=auto'
