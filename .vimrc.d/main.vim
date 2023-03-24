@@ -27,6 +27,10 @@ set noswapfile
 " values that show on it (Like for git changes and for errors in linter)
 set signcolumn=yes
 
+" Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
+" delays and poor user experience
+set updatetime=200
+
 " Let's save undo info!
 set undodir=~/.vim/undo
 set undofile
