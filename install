@@ -3,31 +3,11 @@
 # Set GIT to use colors
 git config --global color.ui auto
 
-# Load up some default values from the environment!
-GIT_NAME_CURRENT=$(git config --global user.name)
-GIT_EMAIL_CURRENT=$(git config --global user.email)
-
-# Ask what name to use?
-printf "Git Name [$GIT_NAME_CURRENT]:"
-read GIT_NAME_NEW
-
-# Ask what email to use?
-printf "Git Email [$GIT_EMAIL_CURRENT]:"
-read GIT_EMAIL_NEW
-
-# Ask if we want to update the plugins...
-printf "Update/Install Plugins? [Y/n]:"
-read UPDATE_PLUGINS
-
 # Save the GIT_NAME
-if [ "$GIT_NAME_NEW" != "" ]; then
-	git config --global user.name "$GIT_NAME_NEW"
-fi
+git config --global user.name "Barry Deeney"
 
 # Save the GIT_EMAIL
-if [ "$GIT_EMAIL_NEW" != "" ]; then
-	git config --global user.email "$GIT_EMAIL_NEW"
-fi
+git config --global user.email "mxaddict@codedmaster.com"
 
 # Add our global gitignore
 git config --global core.excludesfile ~/.gitignore_global
@@ -66,14 +46,11 @@ if [ -d ~/.vimrc.d ]; then
 	rm -r ~/.vimrc.d
 fi
 
-# Check if we have  ~/.vim/undo
-if [ -d ~/.vim/undo ]; then
-	# Make the undo dir
-	mkdir -p ~/.vim/undo
-fi
-
 # Copy the .vimrc.d/ DIR to home DIR
 cp -r $DOTFILES_DIR/.vimrc.d ~/
+
+# Make the undo dir
+mkdir -p ~/.vim/undo
 
 # Check if our plugin manager is installed
 if [ ! -f ~/.vim/autoload/plug.vim ]; then
@@ -95,17 +72,18 @@ if [ ! -h $CONFIG_DIR/nvim/init.vim ]; then
 	ln -s ~/.vimrc $CONFIG_DIR/nvim/init.vim
 fi
 
-# Check if we even want to install/update plugins
-if [ "$UPDATE_PLUGINS" == "Y" ] || [ "$UPDATE_PLUGINS" == "y" ] || [ "$UPDATE_PLUGINS" == "" ]; then
-	# Install Vim Plugins
-	printf "Installing Vim Plugins, Will take a while depending on connection speed!\n"
-	vim +PlugUpgrade +PlugClean! +PlugUpdate +qall
-fi
+# Install Vim Plugins
+printf "Installing Vim Plugins, Will take a while depending on connection speed!\n"
+vim +PlugUpgrade +PlugClean! +PlugUpdate +qall
+
+# Setup Promptline!
+vim +"PromptlineSnapshot! ~/.promptline.sh" +qall
+
+# Setup Tmuxline!
+vim +Tmuxline +"TmuxlineSnapshot! ~/.tmuxline.conf" +qall
 
 # Copy all our custom files!
 cat $DOTFILES_DIR/.aliasrc          > ~/.aliasrc
-cat $DOTFILES_DIR/.bash_profile     > ~/.bash_profile
-cat $DOTFILES_DIR/.bashrc           > ~/.bashrc
 cat $DOTFILES_DIR/.pathrc           > ~/.pathrc
 cat $DOTFILES_DIR/.shrc             > ~/.shrc
 cat $DOTFILES_DIR/.tmux.conf        > ~/.tmux.conf
@@ -113,18 +91,6 @@ cat $DOTFILES_DIR/.vimrc            > ~/.vimrc
 cat $DOTFILES_DIR/.zsh_profile      > ~/.zsh_profile
 cat $DOTFILES_DIR/.zshrc            > ~/.zshrc
 cat $DOTFILES_DIR/.gitignore_global > ~/.gitignore_global
-
-# Check if we have promptline setup already
-if [ -d ~/.vim/plugged/promptline.vim ]; then
-	# Setup Promptline!
-	vim +"PromptlineSnapshot! ~/.promptline.sh" +qall
-fi
-
-# Check if we have tmuxline setup already
-if [ -d ~/.vim/plugged/tmuxline.vim ]; then
-	# Setup Promptline!
-	vim +Tmuxline +"TmuxlineSnapshot! ~/.tmuxline.conf" +qall
-fi
 
 # Install done! WEW!
 printf "Install DONE! WEW!\n"
