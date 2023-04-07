@@ -76,12 +76,6 @@ fi
 printf "Installing Vim Plugins, Will take a while depending on connection speed!\n"
 vim +PlugUpgrade +PlugClean! +PlugUpdate +qall
 
-# Setup Promptline!
-vim +"PromptlineSnapshot! ~/.promptline.sh" +qall
-
-# Setup Tmuxline!
-vim +Tmuxline +"TmuxlineSnapshot! ~/.tmuxline.conf" +qall
-
 # Copy all our custom files!
 cat $DOTFILES_DIR/.aliasrc          > ~/.aliasrc
 cat $DOTFILES_DIR/.pathrc           > ~/.pathrc
@@ -91,6 +85,12 @@ cat $DOTFILES_DIR/.vimrc            > ~/.vimrc
 cat $DOTFILES_DIR/.zsh_profile      > ~/.zsh_profile
 cat $DOTFILES_DIR/.zshrc            > ~/.zshrc
 cat $DOTFILES_DIR/.gitignore_global > ~/.gitignore_global
+
+# Setup Promptline!
+vim +"PromptlineSnapshot! ~/.promptline.sh" +qall
+
+# Setup Tmuxline!
+vim +Tmuxline +"TmuxlineSnapshot! ~/.tmuxline.conf" +qall
 
 # Install done! WEW!
 printf "Install DONE! WEW!\n"
