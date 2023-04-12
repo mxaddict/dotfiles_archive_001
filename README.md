@@ -26,7 +26,7 @@ sudo pip3 install neovim
 # Install requirements END
 
 # seriously, that's it! and follow the prompts!
-sh <(curl -sL https://raw.githubusercontent.com/mxaddict/dotfiles/master/install)
+sh -c "$(curl -sL https://raw.githubusercontent.com/mxaddict/dotfiles/master/install)"
 ```
 
 Optional Fonts
